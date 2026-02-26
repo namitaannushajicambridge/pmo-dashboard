@@ -7,35 +7,40 @@ const resourceData = [
         currentPlan: 25,
         previousMonthPlan: 22,
         actual: 23,
-        status: "on-track"
+        status: "on-track",
+        team: "ALPHA"
     },
     {
         projectName: "Customer Portal Redesign",
         currentPlan: 18,
         previousMonthPlan: 15,
         actual: 14,
-        status: "at-risk"
+        status: "at-risk",
+        team: "BETA"
     },
     {
         projectName: "Data Analytics Platform",
         currentPlan: 30,
         previousMonthPlan: 28,
         actual: 32,
-        status: "critical"
+        status: "critical",
+        team: "GAMMA"
     },
     {
         projectName: "Mobile App Development",
         currentPlan: 12,
         previousMonthPlan: 12,
         actual: 12,
-        status: "on-track"
+        status: "on-track",
+        team: "DELTA"
     },
     {
         projectName: "Cloud Migration Initiative",
         currentPlan: 20,
         previousMonthPlan: 18,
         actual: 17,
-        status: "on-track"
+        status: "on-track",
+        team: "ALPHA"
     }
 ];
 
@@ -217,6 +222,7 @@ function initializeResourceTable() {
         const statusBadge = getStatusBadge(row.status);
 
         const tr = document.createElement('tr');
+        tr.setAttribute('data-team', row.team || '');
         tr.innerHTML = `
             <td class="project-name">${row.projectName}</td>
             <td>${row.currentPlan}</td>

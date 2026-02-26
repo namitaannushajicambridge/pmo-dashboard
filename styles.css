@@ -1427,3 +1427,182 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+/* ===== Team Code Input ===== */
+.team-code-input {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background: white;
+    border: 2px solid var(--border-light);
+    border-radius: var(--radius-full);
+    padding: var(--spacing-xs) var(--spacing-lg) var(--spacing-xs) var(--spacing-md);
+    width: 220px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.team-code-input:focus-within {
+    border-color: var(--primary-main);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15), var(--shadow-md);
+}
+
+.team-code-input i {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    transition: color 0.3s ease;
+}
+
+.team-code-input:focus-within i {
+    color: var(--primary-main);
+}
+
+.team-code-input input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 0.85rem;
+    width: 100%;
+    color: var(--text-primary);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.team-code-input input::placeholder {
+    text-transform: none;
+    font-weight: 400;
+    letter-spacing: normal;
+}
+
+.team-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.team-indicator.active {
+    opacity: 1;
+    animation: indicatorPulse 2s ease-in-out infinite;
+}
+
+@keyframes indicatorPulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.3); opacity: 0.7; }
+}
+
+/* ===== Theme Transition System ===== */
+.theme-transitioning,
+.theme-transitioning *,
+.theme-transitioning *::before,
+.theme-transitioning *::after {
+    transition: background-color 0.5s ease,
+                color 0.4s ease,
+                border-color 0.4s ease,
+                box-shadow 0.4s ease,
+                background 0.5s ease !important;
+}
+
+/* Sidebar themed state */
+.sidebar.themed {
+    background: var(--bg-sidebar);
+    border-right-color: var(--border-light);
+}
+
+/* Background pattern overlay */
+.dashboard-container::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 240px;
+    right: 320px;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.dashboard-container.has-pattern::before {
+    opacity: 1;
+}
+
+/* Team-specific background patterns */
+.dashboard-container.pattern-alpha::before {
+    background: repeating-linear-gradient(
+        135deg,
+        transparent,
+        transparent 40px,
+        rgba(37, 99, 235, 0.02) 40px,
+        rgba(37, 99, 235, 0.02) 41px
+    );
+}
+
+.dashboard-container.pattern-beta::before {
+    background: 
+        linear-gradient(rgba(139, 92, 246, 0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(139, 92, 246, 0.015) 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+
+.dashboard-container.pattern-gamma::before {
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+}
+
+.dashboard-container.pattern-delta::before {
+    background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 60px,
+        rgba(234, 88, 12, 0.02) 60px,
+        rgba(234, 88, 12, 0.02) 62px
+    ),
+    repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 40px,
+        rgba(234, 88, 12, 0.015) 40px,
+        rgba(234, 88, 12, 0.015) 42px
+    );
+}
+
+/* Executive mode multi-color accent bar on sidebar */
+.sidebar.exec-mode .logo-icon {
+    background: linear-gradient(135deg, #2563eb, #8b5cf6, #10b981, #ea580c) !important;
+}
+
+/* Team name badge that appears in sidebar */
+.team-name-badge {
+    display: none;
+    text-align: center;
+    padding: var(--spacing-sm) var(--spacing-md);
+    margin: 0 var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-md);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: white;
+    background: var(--primary-main);
+}
+
+.team-name-badge.visible {
+    display: block;
+    animation: fadeSlideIn 0.4s ease;
+}
+
+@keyframes fadeSlideIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hover effect on risk stat cards */
+.risk-stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
