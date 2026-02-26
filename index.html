@@ -662,10 +662,25 @@
                     const panel = document.getElementById('riskDetailPanel');
                     const title = document.getElementById('riskDetailTitle');
                     const body = document.getElementById('riskDetailBody');
+
+                    // Capture active filters
+                    const teamCodeInput = document.getElementById('teamCodeInput')?.value.trim().toUpperCase();
+                    const teamDropdown = document.getElementById('riskTeamFilter')?.value.toUpperCase();
+                    const activeTeamCode = (teamCodeInput && teamCodeInput !== 'EXEC') ? teamCodeInput : (teamDropdown !== 'ALL' ? teamDropdown : null);
+                    const isFiltered = !!activeTeamCode;
+
                     const labels = { 'completed': 'Completed Projects with Risk Details', 'delayed': 'Delayed Projects', 'dropped': 'Dropped Projects', 'at-risk': 'At Risk Projects' };
                     title.textContent = labels[type] || '';
+                    panel.setAttribute('data-current-type', type); // Store for refresh
                     body.innerHTML = '';
-                    (riskData[type] || []).forEach(r => {
+
+                    const filteredData = (riskData[type] || []).filter(r => {
+                        if (!isFiltered) return true;
+                        const teamNameMap = { 'ALPHA': 'Alpha', 'BETA': 'Beta', 'GAMMA': 'Gamma', 'DELTA': 'Delta' };
+                        return r.team.includes(teamNameMap[activeTeamCode] || activeTeamCode);
+                    });
+
+                    filteredData.forEach(r => {
                         const badgeClass = statusColors[r.status] || 'on-track';
                         body.innerHTML += `<tr>
                         <td><span class="project-name"><i class="fas fa-folder-open"></i> ${r.project}</span></td>
@@ -675,13 +690,21 @@
                         <td><span class="status-badge ${badgeClass}">${r.status}</span></td>
                     </tr>`;
                     });
+
+                    if (filteredData.length === 0) {
+                        body.innerHTML = '<tr><td colspan="5" style="text-align:center; padding:var(--spacing-lg); color:var(--text-muted);">No projects found for the selected view.</td></tr>';
+                    }
+
                     panel.style.display = 'block';
                     panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                 }
                 // Team filter for risk section
                 document.getElementById('riskTeamFilter').addEventListener('change', function () {
-                    // placeholder for team-based filtering
-                    console.log('Filter by team:', this.value);
+                    const panel = document.getElementById('riskDetailPanel');
+                    if (panel.style.display === 'block') {
+                        const currentType = panel.getAttribute('data-current-type');
+                        if (currentType) showRiskDetail(currentType);
+                    }
                 });
             </script>
         </main>
