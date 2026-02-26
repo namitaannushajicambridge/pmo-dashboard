@@ -126,249 +126,140 @@
                     </div>
                 </section>
 
-                <div style="margin-bottom: var(--spacing-xl);"></div> <!-- Spacer -->
-                <!-- Project Status Section -->
+                <div style="margin-bottom: var(--spacing-xl);"></div>
+
+                <!-- 1. Plans / Project Status Section -->
                 <section class="section project-status-section">
                     <div class="section-header">
-                        <h2><i class="fas fa-tasks"></i> Project Status Overview</h2>
+                        <h2><i class="fas fa-clipboard-list"></i> Plans</h2>
                         <div class="section-actions">
                             <button class="btn btn-secondary"><i class="fas fa-filter"></i> Filter</button>
                             <button class="btn btn-primary"><i class="fas fa-plus"></i> New Project</button>
                         </div>
                     </div>
 
+                    <!-- Total = 0 / Out of Plan summary -->
+                    <div
+                        style="display:flex; gap: var(--spacing-lg); align-items:center; margin-bottom: var(--spacing-lg); padding: var(--spacing-md) var(--spacing-lg); background: var(--bg-hover); border-radius: var(--radius-lg);">
+                        <div style="text-align:center; min-width:90px;">
+                            <div
+                                style="font-size:0.75rem; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:2px;">
+                                Total</div>
+                            <div style="font-size:2rem; font-weight:800; color:var(--text-primary);">100</div>
+                        </div>
+                        <div style="width:1px; height:50px; background:var(--border-light);"></div>
+                        <div style="text-align:center; min-width:110px;">
+                            <div
+                                style="font-size:0.75rem; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:2px;">
+                                Out of Plan</div>
+                            <div style="font-size:2rem; font-weight:800; color:var(--status-dropped);">5</div>
+                        </div>
+                        <div style="width:1px; height:50px; background:var(--border-light);"></div>
+                        <div style="display:flex; gap:var(--spacing-xl); flex:1; justify-content:space-around;">
+                            <div style="text-align:center;">
+                                <div style="font-size:0.75rem; color:var(--text-secondary); margin-bottom:2px;">
+                                    Initiated</div>
+                                <div style="font-size:1.5rem; font-weight:700; color:#0ea5e9;">8</div>
+                            </div>
+                            <div style="text-align:center;">
+                                <div style="font-size:0.75rem; color:var(--text-secondary); margin-bottom:2px;">In Plant
+                                </div>
+                                <div style="font-size:1.5rem; font-weight:700; color:#8b5cf6;">12</div>
+                            </div>
+                            <div style="text-align:center;">
+                                <div style="font-size:0.75rem; color:var(--text-secondary); margin-bottom:2px;">Yet to
+                                    Be</div>
+                                <div style="font-size:1.5rem; font-weight:700; color:#f59e0b;">7</div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="status-cards">
                         <div class="status-card planned">
-                            <div class="status-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
+                            <div class="status-icon"><i class="fas fa-clock"></i></div>
                             <div class="status-info">
                                 <h3>Planned</h3>
                                 <span class="count">12</span>
                             </div>
-                            <div class="status-trend up">
-                                <i class="fas fa-arrow-up"></i> +3
-                            </div>
+                            <div class="status-trend up"><i class="fas fa-arrow-up"></i> +3</div>
                         </div>
-
                         <div class="status-card initiated">
-                            <div class="status-icon">
-                                <i class="fas fa-play-circle"></i>
-                            </div>
+                            <div class="status-icon"><i class="fas fa-play-circle"></i></div>
                             <div class="status-info">
                                 <h3>Initiated</h3>
                                 <span class="count">8</span>
                             </div>
-                            <div class="status-trend up">
-                                <i class="fas fa-arrow-up"></i> +2
-                            </div>
+                            <div class="status-trend up"><i class="fas fa-arrow-up"></i> +2</div>
                         </div>
-
                         <div class="status-card closed">
-                            <div class="status-icon">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
+                            <div class="status-icon"><i class="fas fa-check-circle"></i></div>
                             <div class="status-info">
                                 <h3>Closed</h3>
                                 <span class="count">45</span>
                             </div>
-                            <div class="status-trend up">
-                                <i class="fas fa-arrow-up"></i> +5
-                            </div>
+                            <div class="status-trend up"><i class="fas fa-arrow-up"></i> +5</div>
                         </div>
-
                         <div class="status-card dropped">
-                            <div class="status-icon">
-                                <i class="fas fa-times-circle"></i>
-                            </div>
+                            <div class="status-icon"><i class="fas fa-times-circle"></i></div>
                             <div class="status-info">
                                 <h3>Dropped</h3>
                                 <span class="count">3</span>
                             </div>
-                            <div class="status-trend down">
-                                <i class="fas fa-arrow-down"></i> -1
-                            </div>
+                            <div class="status-trend down"><i class="fas fa-arrow-down"></i> -1</div>
                         </div>
-
                         <div class="status-card to-be-initiated">
-                            <div class="status-icon">
-                                <i class="fas fa-hourglass-start"></i>
-                            </div>
+                            <div class="status-icon"><i class="fas fa-hourglass-start"></i></div>
                             <div class="status-info">
                                 <h3>To Be Initiated</h3>
                                 <span class="count">7</span>
                             </div>
-                            <div class="status-trend neutral">
-                                <i class="fas fa-minus"></i> 0
-                            </div>
+                            <div class="status-trend neutral"><i class="fas fa-minus"></i> 0</div>
                         </div>
                     </div>
                 </section>
 
-                </section>
-
-                <!-- Risk & Cost Breakdown Row -->
-                <div
-                    style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xl); margin-bottom: var(--spacing-xl);">
-                    <!-- Risk Management -->
-                    <section class="section">
-                        <div class="section-header">
-                            <h2><i class="fas fa-shield-alt"></i> Risk Management</h2>
-                        </div>
-                        <div
-                            style="display: flex; gap: var(--spacing-lg); align-items: center; justify-content: space-around;">
-                            <div style="text-align: center;">
-                                <div style="font-size: 2.5rem; font-weight: 800; color: var(--status-dropped);">40</div>
-                                <div style="color: var(--text-secondary); font-size: 0.9rem;">Projects With Risk</div>
-                            </div>
-                            <div style="width: 1px; height: 60px; background: var(--border-light);"></div>
-                            <div style="text-align: center;">
-                                <div style="font-size: 2.5rem; font-weight: 800; color: var(--status-closed);">0</div>
-                                <div style="color: var(--text-secondary); font-size: 0.9rem;">Projects Without Risk
-                                </div>
-                            </div>
-                            <!-- Donut chart canvas placeholder -->
-                            <div style="width: 100px; height: 100px;">
-                                <canvas id="riskChart"></canvas>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Cost Overshoot -->
-                    <section class="section">
-                        <div class="section-header">
-                            <h2><i class="fas fa-hand-holding-usd"></i> Cost Overshoot</h2>
-                        </div>
-                        <div style="display: flex; gap: var(--spacing-lg); align-items: center;">
-                            <div class="summary-icon orange" style="width: 50px; height: 50px; font-size: 1.2rem;">
-                                <i class="fas fa-arrow-trend-up"></i>
-                            </div>
-                            <div>
-                                <div style="font-size: 2rem; font-weight: 800; color: var(--text-primary);">5</div>
-                                <div style="color: var(--text-secondary); font-size: 0.9rem;">Projects Exceeding Budget
-                                </div>
-                            </div>
-                            <div style="margin-left: auto; text-align: right;">
-                                <div style="font-size: 1.5rem; font-weight: 700; color: var(--status-dropped);">$35,000
-                                </div>
-                                <div style="color: var(--text-secondary); font-size: 0.8rem;">Total Exceeded Amount
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-
-                <!-- Travel & HQ PL Row -->
-                <div
-                    style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xl); margin-bottom: var(--spacing-xl);">
-                    <!-- Travel Cost -->
-                    <section class="section">
-                        <div class="section-header">
-                            <h2><i class="fas fa-plane"></i> Travel Cost</h2>
-                        </div>
-                        <div
-                            style="display: flex; justify-content: space-between; align-items: center; gap: var(--spacing-md);">
-                            <div style="flex: 1;">
-                                <div style="margin-bottom: var(--spacing-sm);">
-                                    <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
-                                        <span
-                                            style="font-size: 0.85rem; font-weight: 600; color: var(--text-secondary);">Utilized
-                                            ($15k)</span>
-                                        <span style="font-size: 0.85rem; font-weight: 600;">50%</span>
-                                    </div>
-                                    <div
-                                        style="height: 8px; background: var(--bg-hover); border-radius: var(--radius-full); overflow: hidden;">
-                                        <div
-                                            style="width: 50%; height: 100%; background: var(--brand-blue); border-radius: var(--radius-full);">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div style="margin-bottom: var(--spacing-sm);">
-                                    <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
-                                        <span
-                                            style="font-size: 0.85rem; font-weight: 600; color: var(--text-secondary);">Ongoing
-                                            ($5k)</span>
-                                        <span style="font-size: 0.85rem; font-weight: 600;">17%</span>
-                                    </div>
-                                    <div
-                                        style="height: 8px; background: var(--bg-hover); border-radius: var(--radius-full); overflow: hidden;">
-                                        <div
-                                            style="width: 17%; height: 100%; background: var(--brand-purple); border-radius: var(--radius-full);">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
-                                        <span
-                                            style="font-size: 0.85rem; font-weight: 600; color: var(--text-secondary);">Remaining
-                                            ($10k)</span>
-                                        <span style="font-size: 0.85rem; font-weight: 600;">33%</span>
-                                    </div>
-                                    <div
-                                        style="height: 8px; background: var(--bg-hover); border-radius: var(--radius-full); overflow: hidden;">
-                                        <div
-                                            style="width: 33%; height: 100%; background: var(--status-closed); border-radius: var(--radius-full);">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div style="text-align: center; min-width: 100px;">
-                                <div style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 4px;">Total
-                                    Budget</div>
-                                <div style="font-size: 1.25rem; font-weight: 700; color: var(--text-primary);">$30,000
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- HQ PL Score -->
-                    <section class="section">
-                        <div class="section-header">
-                            <h2><i class="fas fa-star-half-alt"></i> HQ PL Score</h2>
-                        </div>
-                        <div style="display: flex; justify-content: space-around; text-align: center;">
-                            <div style="position: relative; width: 120px; height: 120px;">
-                                <canvas id="sribScoreChart"></canvas>
-                                <div
-                                    style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
-                                    <div style="font-size: 1.5rem; font-weight: 800; color: var(--text-primary);">0.8
-                                    </div>
-                                    <div style="font-size: 0.7rem; color: var(--text-secondary);">SRIB Score</div>
-                                </div>
-                            </div>
-                            <div style="position: relative; width: 120px; height: 120px;">
-                                <canvas id="teamScoreChart"></canvas>
-                                <div
-                                    style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
-                                    <div style="font-size: 1.5rem; font-weight: 800; color: var(--text-primary);">0.8
-                                    </div>
-                                    <div style="font-size: 0.7rem; color: var(--text-secondary);">Team Score</div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-
-                <!-- Team Skill Level Section -->
-                <section class="section team-skill-section">
+                <!-- 2. Resource Management Section -->
+                <section class="section resource-management-section">
                     <div class="section-header">
-                        <h2><i class="fas fa-brain"></i> Team Skill Level</h2>
+                        <h2><i class="fas fa-users-cog"></i> Resource Management</h2>
                         <div class="section-actions">
-                            <select
-                                style="padding: 6px 12px; border: 1px solid var(--border-light); border-radius: var(--radius-md); font-size: 0.85rem; outline: none; color: var(--text-secondary);">
-                                <option>All Grades</option>
-                                <option>Grade A</option>
-                                <option>Grade B</option>
-                                <option>Grade C</option>
-                            </select>
+                            <button class="btn btn-secondary"><i class="fas fa-download"></i> Export</button>
+                            <button class="btn btn-primary"><i class="fas fa-plus"></i> Add Resource</button>
                         </div>
                     </div>
-                    <div style="height: 300px; width: 100%;">
-                        <canvas id="skillChart"></canvas>
+
+                    <div class="resource-table-container">
+                        <table class="resource-table" id="resourceTable">
+                            <thead>
+                                <tr>
+                                    <th>Project Name</th>
+                                    <th>Current Plan</th>
+                                    <th>December Month Plan</th>
+                                    <th>Actual</th>
+                                    <th class="calculated">Current &minus; Actual</th>
+                                    <th class="calculated">Current &minus; December</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="resourceTableBody">
+                                <!-- Data will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="table-footer">
+                        <div class="table-info">
+                            Showing <span id="showingCount">5</span> of <span id="totalCount">5</span> projects
+                        </div>
+                        <div class="table-pagination">
+                            <button class="pagination-btn" disabled><i class="fas fa-chevron-left"></i></button>
+                            <span class="page-number">1</span>
+                            <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
+                        </div>
                     </div>
                 </section>
 
-                <!-- Milestones Section Placeholder (keeping existing structure) -->
+                <!-- 3. Milestones Section -->
                 <section class="section milestones-section">
                     <div class="section-header">
                         <h2><i class="fas fa-flag"></i> Milestones</h2>
@@ -428,12 +319,13 @@
                     </div>
                 </section>
 
-                <!-- SRI-B KPIs Section -->
+                <!-- 4. SRI-B KPIs Section -->
                 <section class="section srib-kpis-section">
                     <div class="section-header">
                         <h2><i class="fas fa-chart-bar"></i> SRI-B KPIs</h2>
                         <div class="section-actions">
-                            <button class="btn btn-secondary"><i class="fas fa-sync-alt"></i> Refresh</button>
+                            <button class="btn btn-secondary"><i class="fas fa-edit"></i> Modify</button>
+                            <button class="btn btn-primary"><i class="fas fa-plus"></i> Add</button>
                         </div>
                     </div>
 
@@ -485,49 +377,287 @@
                     </div>
                 </section>
 
-                <!-- Resource Management Section -->
-                <section class="section resource-management-section">
+                <!-- 5. Team Skill Levels Section — Matrix Table -->
+                <section class="section team-skill-section">
                     <div class="section-header">
-                        <h2><i class="fas fa-users-cog"></i> Resource Management</h2>
+                        <h2><i class="fas fa-brain"></i> Team Skill Levels</h2>
                         <div class="section-actions">
-                            <button class="btn btn-secondary"><i class="fas fa-download"></i> Export</button>
-                            <button class="btn btn-primary"><i class="fas fa-plus"></i> Add Resource</button>
+                            <button class="btn btn-secondary"><i class="fas fa-trash-alt"></i> Delete</button>
+                            <button class="btn btn-secondary"><i class="fas fa-edit"></i> Modify</button>
+                            <button class="btn btn-primary"><i class="fas fa-plus"></i> Add</button>
                         </div>
                     </div>
 
                     <div class="resource-table-container">
-                        <table class="resource-table" id="resourceTable">
+                        <table class="resource-table" id="skillMatrixTable">
                             <thead>
                                 <tr>
-                                    <th>Project Name</th>
-                                    <th>Current Plan</th>
-                                    <th>Previous Month Plan</th>
-                                    <th>Actual</th>
-                                    <th class="calculated">Current - Actual</th>
-                                    <th class="calculated">Current - Prev Month</th>
-                                    <th>Status</th>
+                                    <th>Skill</th>
+                                    <th>Novice</th>
+                                    <th>Practitioner</th>
+                                    <th>Competent</th>
+                                    <th>Expert</th>
+                                    <th>Innovator</th>
+                                    <th class="calculated">Total</th>
                                 </tr>
                             </thead>
-                            <tbody id="resourceTableBody">
-                                <!-- Data will be populated by JavaScript -->
+                            <tbody>
+                                <tr>
+                                    <td><span class="project-name"><i class="fas fa-code"></i> Software Dev</span></td>
+                                    <td>22</td>
+                                    <td>58</td>
+                                    <td>95</td>
+                                    <td>67</td>
+                                    <td>18</td>
+                                    <td class="calculated-neutral">260</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="project-name"><i class="fas fa-database"></i> Data
+                                            Engineering</span></td>
+                                    <td>15</td>
+                                    <td>44</td>
+                                    <td>82</td>
+                                    <td>55</td>
+                                    <td>14</td>
+                                    <td class="calculated-neutral">210</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="project-name"><i class="fas fa-flask"></i> R&amp;D /
+                                            Research</span></td>
+                                    <td>30</td>
+                                    <td>110</td>
+                                    <td>168</td>
+                                    <td>120</td>
+                                    <td>45</td>
+                                    <td class="calculated-neutral">473</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="project-name"><i class="fas fa-tasks"></i> Project
+                                            Management</span></td>
+                                    <td>12</td>
+                                    <td>60</td>
+                                    <td>90</td>
+                                    <td>70</td>
+                                    <td>22</td>
+                                    <td class="calculated-neutral">254</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="project-name"><i class="fas fa-shield-alt"></i> Quality
+                                            Assurance</span></td>
+                                    <td>7</td>
+                                    <td>32</td>
+                                    <td>58</td>
+                                    <td>40</td>
+                                    <td>8</td>
+                                    <td class="calculated-neutral">145</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
+                </section>
 
-                    <div class="table-footer">
-                        <div class="table-info">
-                            Showing <span id="showingCount">5</span> of <span id="totalCount">5</span> projects
+                <!-- 6. Travel Cost Section -->
+                <section class="section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-plane"></i> Travel Cost</h2>
+                    </div>
+                    <div style="display:flex; gap:var(--spacing-xl); align-items:flex-start;">
+                        <!-- Total Budget on the left -->
+                        <div
+                            style="min-width:160px; text-align:center; padding:var(--spacing-lg); background:var(--bg-hover); border-radius:var(--radius-lg);">
+                            <div
+                                style="font-size:0.8rem; color:var(--text-secondary); margin-bottom:6px; text-transform:uppercase; letter-spacing:0.05em;">
+                                Total Budget</div>
+                            <div style="font-size:2rem; font-weight:800; color:var(--text-primary);">$30,000</div>
+                            <div style="margin-top:var(--spacing-sm); font-size:0.8rem; color:var(--text-secondary);">
+                                Utilized: <strong style="color:var(--brand-blue);">$15k</strong></div>
+                            <div style="font-size:0.8rem; color:var(--text-secondary);">Remaining: <strong
+                                    style="color:var(--status-closed);">$10k</strong></div>
                         </div>
-                        <div class="table-pagination">
-                            <button class="pagination-btn" disabled><i class="fas fa-chevron-left"></i></button>
-                            <span class="page-number">1</span>
-                            <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
+                        <!-- Per-team breakdown on the right -->
+                        <div style="flex:1;">
+                            <div class="resource-table-container" style="margin-top:0;">
+                                <table class="resource-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Team</th>
+                                            <th>Budget Allocated</th>
+                                            <th>Utilized</th>
+                                            <th>Ongoing</th>
+                                            <th class="calculated">Remaining</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><span class="project-name"><i class="fas fa-layer-group"></i> Team
+                                                    Alpha</span></td>
+                                            <td>$8,000</td>
+                                            <td>$4,500</td>
+                                            <td>$1,200</td>
+                                            <td class="calculated-positive">$2,300</td>
+                                            <td><span class="status-badge on-track"><i class="fas fa-check-circle"></i>
+                                                    On Track</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="project-name"><i class="fas fa-layer-group"></i> Team
+                                                    Beta</span></td>
+                                            <td>$7,000</td>
+                                            <td>$5,200</td>
+                                            <td>$800</td>
+                                            <td class="calculated-negative">$1,000</td>
+                                            <td><span class="status-badge at-risk"><i
+                                                        class="fas fa-exclamation-circle"></i> At Risk</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="project-name"><i class="fas fa-layer-group"></i> Team
+                                                    Gamma</span></td>
+                                            <td>$9,000</td>
+                                            <td>$3,800</td>
+                                            <td>$1,500</td>
+                                            <td class="calculated-positive">$3,700</td>
+                                            <td><span class="status-badge on-track"><i class="fas fa-check-circle"></i>
+                                                    On Track</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td><span class="project-name"><i class="fas fa-layer-group"></i> Team
+                                                    Delta</span></td>
+                                            <td>$6,000</td>
+                                            <td>$1,500</td>
+                                            <td>$500</td>
+                                            <td class="calculated-positive">$4,000</td>
+                                            <td><span class="status-badge on-track"><i class="fas fa-check-circle"></i>
+                                                    On Track</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- Summary Cards Moved to Top -->
+                <!-- 7. Risk Management Section -->
+                <section class="section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-shield-alt"></i> Risk Management</h2>
+                        <div class="section-actions">
+                            <select id="riskTeamFilter"
+                                style="padding:6px 12px; border:1px solid var(--border-light); border-radius:var(--radius-md); font-size:0.85rem; outline:none; color:var(--text-secondary);">
+                                <option value="all">All Teams</option>
+                                <option value="alpha">Team Alpha</option>
+                                <option value="beta">Team Beta</option>
+                                <option value="gamma">Team Gamma</option>
+                                <option value="delta">Team Delta</option>
+                            </select>
+                            <button class="btn btn-secondary"><i class="fas fa-filter"></i> Filter</button>
+                        </div>
+                    </div>
+
+                    <!-- Clickable risk status cards -->
+                    <div
+                        style="display:grid; grid-template-columns:repeat(4,1fr); gap:var(--spacing-md); margin-bottom:var(--spacing-lg);">
+                        <div class="risk-stat-card" onclick="showRiskDetail('completed')"
+                            style="cursor:pointer; padding:var(--spacing-md); background:rgba(16,185,129,0.08); border:1px solid rgba(16,185,129,0.25); border-radius:var(--radius-lg); text-align:center; transition:all 0.2s;">
+                            <div style="font-size:2rem; font-weight:800; color:#10b981;">18</div>
+                            <div style="font-size:0.85rem; color:var(--text-secondary); margin-top:4px;">Completed</div>
+                        </div>
+                        <div class="risk-stat-card" onclick="showRiskDetail('delayed')"
+                            style="cursor:pointer; padding:var(--spacing-md); background:rgba(245,158,11,0.08); border:1px solid rgba(245,158,11,0.25); border-radius:var(--radius-lg); text-align:center; transition:all 0.2s;">
+                            <div style="font-size:2rem; font-weight:800; color:#f59e0b;">6</div>
+                            <div style="font-size:0.85rem; color:var(--text-secondary); margin-top:4px;">Delayed</div>
+                        </div>
+                        <div class="risk-stat-card" onclick="showRiskDetail('dropped')"
+                            style="cursor:pointer; padding:var(--spacing-md); background:rgba(239,68,68,0.08); border:1px solid rgba(239,68,68,0.25); border-radius:var(--radius-lg); text-align:center; transition:all 0.2s;">
+                            <div style="font-size:2rem; font-weight:800; color:#ef4444;">3</div>
+                            <div style="font-size:0.85rem; color:var(--text-secondary); margin-top:4px;">Dropped</div>
+                        </div>
+                        <div class="risk-stat-card" onclick="showRiskDetail('at-risk')"
+                            style="cursor:pointer; padding:var(--spacing-md); background:rgba(99,102,241,0.08); border:1px solid rgba(99,102,241,0.25); border-radius:var(--radius-lg); text-align:center; transition:all 0.2s;">
+                            <div style="font-size:2rem; font-weight:800; color:#6366f1;">4</div>
+                            <div style="font-size:0.85rem; color:var(--text-secondary); margin-top:4px;">At Risk</div>
+                        </div>
+                    </div>
+
+                    <!-- Risk detail panel (hidden by default) -->
+                    <div id="riskDetailPanel"
+                        style="display:none; border-top:1px solid var(--border-light); padding-top:var(--spacing-lg);">
+                        <div
+                            style="display:flex; justify-content:space-between; align-items:center; margin-bottom:var(--spacing-md);">
+                            <h4 id="riskDetailTitle" style="color:var(--text-primary); font-size:0.95rem;"></h4>
+                            <button onclick="document.getElementById('riskDetailPanel').style.display='none'"
+                                class="btn btn-secondary" style="padding:4px 10px; font-size:0.8rem;"><i
+                                    class="fas fa-times"></i> Close</button>
+                        </div>
+                        <div class="resource-table-container" style="margin-top:0;">
+                            <table class="resource-table" id="riskDetailTable">
+                                <thead>
+                                    <tr>
+                                        <th>Project Name</th>
+                                        <th>Team</th>
+                                        <th>Risk Description</th>
+                                        <th>Impact</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="riskDetailBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
             </div>
+
+            <!-- Risk Detail Modal data (JS-driven) -->
+            <script>
+                const riskData = {
+                    'completed': [
+                        { project: 'Project Alpha', team: 'Team Alpha', risk: 'Timeline delay risk resolved', impact: 'Low', status: 'Completed' },
+                        { project: 'Project Delta', team: 'Team Beta', risk: 'Budget overrun mitigated', impact: 'Medium', status: 'Completed' },
+                        { project: 'Project Epsilon', team: 'Team Gamma', risk: 'Resource shortage addressed', impact: 'Low', status: 'Completed' },
+                    ],
+                    'delayed': [
+                        { project: 'Project Sigma', team: 'Team Beta', risk: 'Vendor dependency delay', impact: 'High', status: 'Delayed' },
+                        { project: 'Project Theta', team: 'Team Alpha', risk: 'Technical debt accumulation', impact: 'Medium', status: 'Delayed' },
+                    ],
+                    'dropped': [
+                        { project: 'Project Script', team: 'Team Delta', risk: 'Scope too broad, resources unavailable', impact: 'High', status: 'Dropped' },
+                        { project: 'Project Kappa', team: 'Team Beta', risk: 'Budget cut, project cancelled', impact: 'High', status: 'Dropped' },
+                        { project: 'Project Lambda', team: 'Team Gamma', risk: 'Low ROI, deprioritized', impact: 'Medium', status: 'Dropped' },
+                    ],
+                    'at-risk': [
+                        { project: 'Project Omega', team: 'Team Alpha', risk: 'Key resource leaving Q1', impact: 'High', status: 'At Risk' },
+                        { project: 'Project Nova', team: 'Team Gamma', risk: 'Integration complexity underestimated', impact: 'Medium', status: 'At Risk' },
+                        { project: 'Project Pulse', team: 'Team Beta', risk: 'Third-party API instability', impact: 'Medium', status: 'At Risk' },
+                        { project: 'Project Zeta', team: 'Team Delta', risk: 'Unclear requirements', impact: 'High', status: 'At Risk' },
+                    ]
+                };
+                const statusColors = { 'Completed': 'on-track', 'Delayed': 'at-risk', 'Dropped': 'critical', 'At Risk': 'at-risk' };
+                function showRiskDetail(type) {
+                    const panel = document.getElementById('riskDetailPanel');
+                    const title = document.getElementById('riskDetailTitle');
+                    const body = document.getElementById('riskDetailBody');
+                    const labels = { 'completed': 'Completed Projects with Risk Details', 'delayed': 'Delayed Projects', 'dropped': 'Dropped Projects', 'at-risk': 'At Risk Projects' };
+                    title.textContent = labels[type] || '';
+                    body.innerHTML = '';
+                    (riskData[type] || []).forEach(r => {
+                        const badgeClass = statusColors[r.status] || 'on-track';
+                        body.innerHTML += `<tr>
+                        <td><span class="project-name"><i class="fas fa-folder-open"></i> ${r.project}</span></td>
+                        <td>${r.team}</td>
+                        <td>${r.risk}</td>
+                        <td>${r.impact}</td>
+                        <td><span class="status-badge ${badgeClass}">${r.status}</span></td>
+                    </tr>`;
+                    });
+                    panel.style.display = 'block';
+                    panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }
+                // Team filter for risk section
+                document.getElementById('riskTeamFilter').addEventListener('change', function () {
+                    // placeholder for team-based filtering
+                    console.log('Filter by team:', this.value);
+                });
+            </script>
         </main>
 
         <!-- Right Panel -->
