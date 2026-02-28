@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRISM PMO Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard-enhancements.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon"><i class="fas fa-chart-line"></i></div>
+                <span class="logo-text">PRISM</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active" data-scroll="summarySection" title="Dashboard">
+                    <i class="fas fa-home"></i><span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-item" data-scroll="projectStatusSection" title="Projects">
+                    <i class="fas fa-folder-open"></i><span>Projects</span>
+                </a>
+                <a href="#" class="nav-item" data-scroll="resourceSection" title="Resources">
+                    <i class="fas fa-users"></i><span>Resources</span>
+                </a>
+                <a href="#" class="nav-item" data-scroll="kpiSection" title="KPIs">
+                    <i class="fas fa-chart-bar"></i><span>KPIs</span>
+                </a>
+                <a href="#" class="nav-item" data-scroll="riskSection" title="Risk">
+                    <i class="fas fa-shield-alt"></i><span>Risk</span>
+                </a>
+                <a href="#" class="nav-item" data-scroll="skillSection" title="Skills">
+                    <i class="fas fa-brain"></i><span>Skills</span>
+                </a>
+                <a href="#" class="nav-item" data-scroll="travelSection" title="Travel">
+                    <i class="fas fa-plane"></i><span>Travel</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#" class="nav-item" title="Help">
+                    <i class="fas fa-question-circle"></i><span>Help</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <h1>PMO Dashboard</h1>
+                    <p class="subtitle">Organization Level Metrics & Reporting</p>
+                </div>
+                <div class="header-right">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="globalSearch" placeholder="Search projects...">
+                    </div>
+                    <div class="notifications" id="notificationBell" style="cursor:pointer">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge" id="notifBadge">3</span>
+                    </div>
+                    <div class="user-profile">
+                        <div class="avatar" id="userAvatar">PM</div>
+                        <span id="userLabel">Project Manager</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- ====== ENHANCED FILTER BAR ====== -->
+            <div class="filter-bar-wrapper" id="filterBarWrapper">
+
+                <!-- Filter Row 1: Two filter groups side-by-side -->
+                <div class="filter-dropdowns-row">
+
+                    <!-- Group A: Project Hierarchy -->
+                    <div class="filter-group-set">
+                        <div class="filter-group-set-label"><i class="fas fa-folder-open"></i> Project Hierarchy</div>
+                        <div class="filter-group-set-inner">
+                            <div class="filter-group">
+                                <label class="filter-label">Project</label>
+                                <div class="select-wrapper">
+                                    <select id="projectFilter" class="filter-select">
+                                        <option value="">All Projects</option>
+                                    </select>
+                                    <i class="fas fa-chevron-down select-arrow"></i>
+                                </div>
+                            </div>
+                            <div class="filter-connector"><i class="fas fa-angle-right"></i></div>
+                            <div class="filter-group">
+                                <label class="filter-label">Sub-Project</label>
+                                <div class="select-wrapper">
+                                    <select id="subProjectFilter" class="filter-select" disabled>
+                                        <option value="">All Sub-Projects</option>
+                                    </select>
+                                    <i class="fas fa-chevron-down select-arrow"></i>
+                                </div>
+                            </div>
+                            <div class="filter-connector"><i class="fas fa-angle-right"></i></div>
+                            <div class="filter-group">
+                                <label class="filter-label">Feature</label>
+                                <div class="select-wrapper">
+                                    <select id="featureFilter" class="filter-select" disabled>
+                                        <option value="">All Features</option>
+                                    </select>
+                                    <i class="fas fa-chevron-down select-arrow"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vertical divider between the two groups -->
+                    <div class="filter-groups-divider"></div>
+
+                    <!-- Group B: Team Hierarchy -->
+                    <div class="filter-group-set">
+                        <div class="filter-group-set-label"><i class="fas fa-users"></i> Team Hierarchy</div>
+                        <div class="filter-group-set-inner">
+                            <div class="filter-group">
+                                <label class="filter-label">Division</label>
+                                <div class="select-wrapper">
+                                    <select id="divisionFilter" class="filter-select">
+                                        <option value="">All Divisions</option>
+                                    </select>
+                                    <i class="fas fa-chevron-down select-arrow"></i>
+                                </div>
+                            </div>
+                            <div class="filter-connector"><i class="fas fa-angle-right"></i></div>
+                            <div class="filter-group">
+                                <label class="filter-label">Team</label>
+                                <div class="select-wrapper">
+                                    <select id="teamFilter" class="filter-select" disabled>
+                                        <option value="">All Teams</option>
+                                    </select>
+                                    <i class="fas fa-chevron-down select-arrow"></i>
+                                </div>
+                            </div>
+                            <div class="filter-connector"><i class="fas fa-angle-right"></i></div>
+                            <div class="filter-group">
+                                <label class="filter-label">Sub-Team</label>
+                                <div class="select-wrapper">
+                                    <select id="subTeamFilter" class="filter-select" disabled>
+                                        <option value="">All Sub-Teams</option>
+                                    </select>
+                                    <i class="fas fa-chevron-down select-arrow"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Filter Row 2: Breadcrumb + Actions -->
+                <div class="filter-toprow">
+                    <div class="filter-breadcrumb" id="filterBreadcrumb">
+                        <span class="fb-crumb fb-crumb-all active" id="fbAll">
+                            <i class="fas fa-globe"></i> All Teams
+                        </span>
+                        <span class="fb-sep" id="fbSep1" style="display:none"><i
+                                class="fas fa-chevron-right"></i></span>
+                        <span class="fb-crumb" id="fbProject" style="display:none"></span>
+                        <span class="fb-sep" id="fbSep2" style="display:none"><i
+                                class="fas fa-chevron-right"></i></span>
+                        <span class="fb-crumb" id="fbSubProject" style="display:none"></span>
+                        <span class="fb-sep" id="fbSep3" style="display:none"><i
+                                class="fas fa-chevron-right"></i></span>
+                        <span class="fb-crumb fb-crumb-leaf" id="fbFeature" style="display:none"></span>
+                    </div>
+                    <div class="filter-toprow-actions">
+                        <div id="activeFilterTag" class="active-filter-tag" style="display:none">
+                            <i class="fas fa-filter"></i>
+                            <span id="activeFilterLabel">No Filter</span>
+                            <span class="remove-filter" id="removeFilterBtn">×</span>
+                        </div>
+                        <button class="btn btn-primary btn-sm" id="applyFilterBtn">
+                            <i class="fas fa-check"></i> Apply
+                        </button>
+                        <button class="btn btn-secondary btn-sm" id="clearFilterBtn">
+                            <i class="fas fa-times"></i> Clear
+                        </button>
+                        <button class="btn btn-secondary btn-sm" id="openTeamDetailBtn" disabled>
+                            <i class="fas fa-external-link-alt"></i> Detail View
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Context Banner (shows when a team is selected) -->
+            <div id="teamContextBanner" style="display:none" class="team-context-banner">
+                <div class="tcb-header">
+                    <div class="tcb-icon" id="tcbIcon"><i class="fas fa-users"></i></div>
+                    <div>
+                        <div class="tcb-title" id="tcbTitle">Team Name</div>
+                        <div class="tcb-sub" id="tcbSub">Filtered view — Travel Cost &amp; Resources below</div>
+                    </div>
+                    <div class="tcb-stats" id="tcbStats"></div>
+                </div>
+            </div>
+
+            <!-- Team Travel Cost (visible only when team selected) -->
+            <div id="teamTravelSection" style="display:none" class="team-section-highlight">
+                <section class="section"
+                    style="margin-bottom:0; border:2px solid rgba(99,102,241,0.2); border-radius: var(--radius-lg);">
+                    <div class="section-header">
+                        <h2><i class="fas fa-plane" style="color:var(--brand-blue)"></i> Travel Cost
+                            <span class="team-filter-badge" id="travelTeamBadge"></span>
+                        </h2>
+                        <span class="team-context-chip" id="travelContextChip"></span>
+                    </div>
+                    <div
+                        style="display:flex;justify-content:space-between;align-items:flex-start;gap:var(--spacing-md)">
+                        <div style="flex:1" id="teamTravelBarsContainer"></div>
+                        <div class="travel-budget-box">
+                            <div class="tbx-label">Allocated</div>
+                            <div class="tbx-val" id="teamTravelAllocated">—</div>
+                            <div class="tbx-label" style="margin-top:8px">Used</div>
+                            <div class="tbx-val" style="color:var(--status-closed)" id="teamTravelUsed">—</div>
+                            <div class="tbx-label" style="margin-top:8px">Remaining</div>
+                            <div class="tbx-val" style="color:var(--status-delayed)" id="teamTravelRemaining">—</div>
+                        </div>
+                    </div>
+                    <!-- Mini utilization meter -->
+                    <div style="margin-top:16px">
+                        <div
+                            style="display:flex;justify-content:space-between;font-size:0.8rem;color:var(--text-secondary);margin-bottom:6px">
+                            <span>Budget Utilization</span>
+                            <span id="teamTravelPct">—</span>
+                        </div>
+                        <div class="travel-bar-track" style="height:12px;border-radius:var(--radius-full)">
+                            <div class="travel-bar-fill" id="teamTravelMeter"
+                                style="width:0%;background:var(--gradient-primary);height:100%;border-radius:var(--radius-full);transition:width 0.6s ease">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Team Resource Management (visible only when team selected) -->
+            <div id="teamResourceSection" style="display:none" class="team-section-highlight">
+                <section class="section"
+                    style="margin-bottom:0; border:2px solid rgba(20,184,166,0.2); border-radius: var(--radius-lg);">
+                    <div class="section-header">
+                        <h2><i class="fas fa-users-cog" style="color:var(--brand-teal)"></i> Resource Management
+                            <span class="team-filter-badge teal" id="resourceTeamBadge"></span>
+                        </h2>
+                        <div class="section-actions">
+                            <div class="filter-group" style="margin:0">
+                                <select id="teamMonthSelector" class="filter-select">
+                                    <option value="">Select Month</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Resource KPI tiles -->
+                    <div class="team-resource-kpis" id="teamResourceKpis"></div>
+                    <div class="resource-table-container" style="margin-top:16px">
+                        <table class="resource-table" id="teamResourceTable">
+                            <thead>
+                                <tr>
+                                    <th>Project Name</th>
+                                    <th>Current Plan</th>
+                                    <th>Prev Month Plan</th>
+                                    <th>Actual</th>
+                                    <th class="calculated">Plan vs Actual</th>
+                                    <th class="calculated">MoM Change</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="teamResourceTableBody"></tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+
+                <!-- Project Status Overview -->
+                <section class="pso-wrapper" id="summarySection" data-nav-section="summarySection">
+
+                    <!-- Section Header -->
+                    <div class="pso-section-header">
+                        <div class="pso-section-title-group">
+                            <div class="pso-section-icon"><i class="fas fa-chart-pie"></i></div>
+                            <div>
+                                <h2 class="pso-section-title">Project Status Overview</h2>
+                                <p class="pso-section-sub">Real-time breakdown of all project statuses across your
+                                    portfolio</p>
+                            </div>
+                        </div>
+                        <div class="pso-section-actions">
+                            <button class="pso-btn-secondary" onclick="openStatusDrillDown('initiated')">
+                                <i class="fas fa-table"></i> View All
+                            </button>
+                            <button class="pso-btn-primary" id="newProjectBtn" onclick="openModal('newProjectModal')">
+                                <i class="fas fa-plus"></i> Add Project
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Top summary bar: Total | Out of Plan | mini stats -->
+                    <div class="pso-topbar">
+                        <div class="pso-topbar-main">
+                            <div class="pso-main-stat">
+                                <div class="pso-main-label">TOTAL</div>
+                                <div class="pso-main-val" id="totalProjectsVal">—</div>
+                            </div>
+                            <div class="pso-topbar-divider"></div>
+                            <div class="pso-main-stat">
+                                <div class="pso-main-label out-of-plan">OUT OF PLAN</div>
+                                <div class="pso-main-val out-of-plan" id="atRiskVal">—</div>
+                            </div>
+                        </div>
+                        <div class="pso-topbar-sep"></div>
+                        <div class="pso-mini-stats">
+                            <div class="pso-mini-stat">
+                                <div class="pso-mini-label">Initiated</div>
+                                <div class="pso-mini-val initiated" id="miniInitiated">—</div>
+                            </div>
+                            <div class="pso-mini-stat">
+                                <div class="pso-mini-label">In Plan</div>
+                                <div class="pso-mini-val inplan" id="miniInPlan">—</div>
+                            </div>
+                            <div class="pso-mini-stat">
+                                <div class="pso-mini-label">Yet to Be</div>
+                                <div class="pso-mini-val yettobe" id="miniYetToBe">—</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Status Cards Row -->
+                    <div class="pso-cards" id="projectStatusSection" data-nav-section="projectStatusSection">
+                        <div class="pso-card planned" style="cursor:pointer" onclick="openStatusDrillDown('planned')">
+                            <div class="pso-card-icon planned"><i class="fas fa-clock"></i></div>
+                            <div class="pso-card-label">PLANNED</div>
+                            <div class="pso-card-count" id="statusPlanned">—</div>
+                            <div class="pso-card-trend up"><i class="fas fa-arrow-up"></i> +3</div>
+                        </div>
+                        <div class="pso-card initiated" style="cursor:pointer"
+                            onclick="openStatusDrillDown('initiated')">
+                            <div class="pso-card-icon initiated"><i class="fas fa-play-circle"></i></div>
+                            <div class="pso-card-label">INITIATED</div>
+                            <div class="pso-card-count" id="statusInitiated">—</div>
+                            <div class="pso-card-trend up"><i class="fas fa-arrow-up"></i> +2</div>
+                        </div>
+                        <div class="pso-card closed" style="cursor:pointer" onclick="openStatusDrillDown('closed')">
+                            <div class="pso-card-icon closed"><i class="fas fa-check-circle"></i></div>
+                            <div class="pso-card-label">CLOSED</div>
+                            <div class="pso-card-count" id="statusClosed">—</div>
+                            <div class="pso-card-trend up"><i class="fas fa-arrow-up"></i> +5</div>
+                        </div>
+                        <div class="pso-card dropped" style="cursor:pointer" onclick="openStatusDrillDown('dropped')">
+                            <div class="pso-card-icon dropped"><i class="fas fa-times-circle"></i></div>
+                            <div class="pso-card-label">DROPPED</div>
+                            <div class="pso-card-count" id="statusDropped">—</div>
+                            <div class="pso-card-trend down"><i class="fas fa-arrow-down"></i> -1</div>
+                        </div>
+                        <div class="pso-card tbi" style="cursor:pointer"
+                            onclick="openStatusDrillDown('to-be-initiated')">
+                            <div class="pso-card-icon tbi"><i class="fas fa-hourglass-start"></i></div>
+                            <div class="pso-card-label">TO BE<br>INITIATED</div>
+                            <div class="pso-card-count" id="statusTBI">—</div>
+                            <div class="pso-card-trend neutral"><i class="fas fa-minus"></i> 0</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Risk & Cost Row -->
+                <!-- Risk Management — redesigned -->
+                <section class="rm-wrapper" id="riskSection" data-nav-section="riskSection">
+
+                    <!-- Upgraded Section Header -->
+                    <div class="pso-section-header">
+                        <div class="pso-section-title-group">
+                            <div class="pso-section-icon" style="background:linear-gradient(135deg, #ef4444, #f97316)">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div>
+                                <h2 class="pso-section-title">Risk Management</h2>
+                                <p class="pso-section-sub">Overview of project risks, delays, and critical issues</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stat cards row -->
+                    <div class="rm-stats-row">
+                        <div class="rm-stat-card completed" onclick="openRiskDrillDown('closed')">
+                            <div class="rm-stat-val" id="riskCompleted">—</div>
+                            <div class="rm-stat-lbl">Completed</div>
+                        </div>
+                        <div class="rm-stat-card delayed" onclick="openRiskDrillDown('delayed')">
+                            <div class="rm-stat-val" id="riskDelayed">—</div>
+                            <div class="rm-stat-lbl">Delayed</div>
+                        </div>
+                        <div class="rm-stat-card dropped" onclick="openRiskDrillDown('dropped')">
+                            <div class="rm-stat-val" id="riskDropped">—</div>
+                            <div class="rm-stat-lbl">Dropped</div>
+                        </div>
+                        <div class="rm-stat-card highrisk" onclick="openRiskDrillDown('at-risk')">
+                            <div class="rm-stat-val" id="riskAtRisk">—</div>
+                            <div class="rm-stat-lbl">High Risk</div>
+                        </div>
+                        <div class="rm-stat-card medrisk">
+                            <div class="rm-stat-val" id="riskMedium">—</div>
+                            <div class="rm-stat-lbl">Medium Risk</div>
+                        </div>
+                    </div>
+
+                    <!-- At Risk Projects table (always visible) -->
+                    <div class="rm-table-wrapper">
+                        <div class="rm-table-header">
+                            <span class="rm-table-title"><i class="fas fa-exclamation-triangle"
+                                    style="color:#f59e0b;margin-right:6px"></i>At Risk Projects</span>
+                            <span class="rm-table-count" id="riskTableCount"></span>
+                        </div>
+                        <table class="rm-table">
+                            <thead>
+                                <tr>
+                                    <th>PROJECT NAME</th>
+                                    <th>TEAM</th>
+                                    <th>RISK DESCRIPTION</th>
+                                    <th>IMPACT</th>
+                                    <th>STATUS</th>
+                                </tr>
+                            </thead>
+                            <tbody id="riskProjectsBody">
+                                <tr>
+                                    <td colspan="5" class="rm-empty">Loading...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Travel Cost — redesigned -->
+                <section class="tc-wrapper" id="travelSection" data-nav-section="travelSection">
+
+                    <!-- Top summary bar -->
+                    <div class="tc-topbar">
+                        <div class="tc-main">
+                            <div class="tc-main-label">TOTAL BUDGET</div>
+                            <div class="tc-main-val" id="travelTotalBudget">—</div>
+                        </div>
+                        <div class="tc-topbar-sep"></div>
+                        <div class="tc-mini-stats">
+                            <div class="tc-mini">
+                                <div class="tc-mini-label">Utilized</div>
+                                <div class="tc-mini-val utilized" id="travelUtilized">—</div>
+                            </div>
+                            <div class="tc-topbar-sep-thin"></div>
+                            <div class="tc-mini">
+                                <div class="tc-mini-label">Ongoing</div>
+                                <div class="tc-mini-val ongoing" id="travelOngoing">—</div>
+                            </div>
+                            <div class="tc-topbar-sep-thin"></div>
+                            <div class="tc-mini">
+                                <div class="tc-mini-label">Remaining</div>
+                                <div class="tc-mini-val remaining" id="travelRemaining">—</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Teams table -->
+                    <table class="tc-table">
+                        <thead>
+                            <tr>
+                                <th>TEAM</th>
+                                <th>BUDGET ALLOCATED</th>
+                                <th>UTILIZED</th>
+                                <th>ONGOING</th>
+                                <th class="tc-remaining-col">REMAINING</th>
+                                <th>STATUS</th>
+                            </tr>
+                        </thead>
+                        <tbody id="travelTeamsBody">
+                            <tr>
+                                <td colspan="6" class="tc-empty">Loading...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- HQ PL Score — kept as compact widget below -->
+                    <div
+                        style="border-top:1px solid var(--border-light);padding-top:16px;margin-top:4px;display:flex;align-items:center;gap:32px;flex-wrap:wrap">
+                        <div
+                            style="font-size:0.8rem;font-weight:700;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.06em">
+                            <i class="fas fa-star-half-alt"></i> HQ PL Score</div>
+                        <div style="display:flex;gap:24px;align-items:center;flex:1">
+                            <div style="display:flex;align-items:center;gap:10px">
+                                <div style="position:relative;width:64px;height:64px"><canvas
+                                        id="sribScoreChart"></canvas>
+                                    <div
+                                        style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;line-height:1">
+                                        <div style="font-size:0.9rem;font-weight:800;color:var(--text-primary)"
+                                            id="sribScoreVal">—</div>
+                                    </div>
+                                </div>
+                                <div style="font-size:0.78rem;color:var(--text-secondary)">SRIB Score</div>
+                            </div>
+                            <div style="display:flex;align-items:center;gap:10px">
+                                <div style="position:relative;width:64px;height:64px"><canvas
+                                        id="teamScoreChart"></canvas>
+                                    <div
+                                        style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;line-height:1">
+                                        <div style="font-size:0.9rem;font-weight:800;color:var(--text-primary)"
+                                            id="teamScoreVal">—</div>
+                                    </div>
+                                </div>
+                                <div style="font-size:0.78rem;color:var(--text-secondary)">Team Score</div>
+                            </div>
+                            <div style="flex:1;max-width:240px;height:44px"><canvas id="hqTrendChart"></canvas></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Team Skill Level Section — Now 20x6 editable grid -->
+                <section class="section team-skill-section" id="skillSection" data-nav-section="skillSection">
+                    <div class="section-header">
+                        <h2><i class="fas fa-brain"></i> Team Skill Matrix</h2>
+                        <div class="section-actions">
+                            <button class="btn btn-secondary btn-sm" id="saveSkillMatrixBtn">
+                                <i class="fas fa-info-circle"></i> Click row to edit
+                            </button>
+                        </div>
+                    </div>
+                    <div class="resource-table-container" style="max-height:400px;overflow-y:auto">
+                        <table class="resource-table" id="skillMatrixTable">
+                            <thead>
+                                <tr>
+                                    <th>Skill Name</th>
+                                    <th>Expert</th>
+                                    <th>Innovator</th>
+                                    <th>Advanced</th>
+                                    <th>Intermediate</th>
+                                    <th>Beginner</th>
+                                    <th class="calculated">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody id="skillMatrixBody">
+                                <!-- Dynamically filled -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Milestones Section -->
+                <section class="section milestones-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-flag"></i> Milestones</h2>
+                        <div class="section-actions">
+                            <button class="btn btn-secondary" id="viewTimelineBtn"><i class="fas fa-calendar"></i> View
+                                Timeline</button>
+                        </div>
+                    </div>
+                    <div class="resource-table-container">
+                        <table class="resource-table" id="milestonesTable">
+                            <thead>
+                                <tr>
+                                    <th>Status</th>
+                                    <th>Count</th>
+                                    <th>Target</th>
+                                    <th class="calculated">Achievement %</th>
+                                    <th>Remarks</th>
+                                </tr>
+                            </thead>
+                            <tbody id="milestonesBody">
+                                <!-- Dynamically filled -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- SRI-B KPIs Section -->
+                <section class="section srib-kpis-section" id="kpiSection" data-nav-section="kpiSection">
+                    <div class="section-header">
+                        <h2><i class="fas fa-chart-bar"></i> SRI-B KPIs</h2>
+                        <div class="section-actions">
+                            <button class="btn btn-primary btn-sm" id="addKpiBtn">
+                                <i class="fas fa-plus"></i> Add KPI
+                            </button>
+                            <button class="btn btn-secondary" id="refreshKpiBtn">
+                                <i class="fas fa-sync-alt"></i> Refresh
+                            </button>
+                        </div>
+                    </div>
+                    <div class="resource-table-container">
+                        <table class="resource-table" id="sribKpisTable">
+                            <thead>
+                                <tr>
+                                    <th>KPI Name</th>
+                                    <th>Current Value</th>
+                                    <th>Target</th>
+                                    <th class="calculated">Variance</th>
+                                    <th>Trend</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="kpiTableBody">
+                                <!-- Dynamically filled -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Resource Management Section -->
+                <section class="section resource-management-section" id="resourceSection"
+                    data-nav-section="resourceSection">
+                    <div class="section-header">
+                        <h2><i class="fas fa-users-cog"></i> Resource Management</h2>
+                        <div class="section-actions">
+                            <div class="filter-group" style="margin:0">
+                                <select id="monthSelector" class="filter-select">
+                                    <option value="">Select Month</option>
+                                </select>
+                            </div>
+                            <button class="btn btn-secondary" id="exportResourceBtn"><i class="fas fa-download"></i>
+                                Export</button>
+                            <button class="btn btn-primary" id="addResourceBtn"><i class="fas fa-plus"></i> Add
+                                Resource</button>
+                        </div>
+                    </div>
+                    <div class="resource-month-summary" id="resourceMonthLabel"
+                        style="padding:8px 0;color:var(--text-secondary);font-size:0.85rem"></div>
+                    <div class="resource-table-container">
+                        <table class="resource-table" id="resourceTable">
+                            <thead>
+                                <tr>
+                                    <th>Project Name</th>
+                                    <th>Current Plan</th>
+                                    <th>Previous Month Plan</th>
+                                    <th>Actual</th>
+                                    <th class="calculated">Current - Actual</th>
+                                    <th class="calculated">Current - Prev Month</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="resourceTableBody">
+                                <!-- Dynamically filled -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="table-footer">
+                        <div class="table-info">
+                            Showing <span id="showingCount">0</span> of <span id="totalCount">0</span> projects
+                        </div>
+                        <div class="table-pagination">
+                            <button class="pagination-btn" id="prevPage" disabled><i
+                                    class="fas fa-chevron-left"></i></button>
+                            <span class="page-number" id="currentPage">1</span>
+                            <button class="pagination-btn" id="nextPage"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+
+        <!-- Right Panel -->
+        <aside class="right-panel">
+            <div class="panel-header">
+                <h3>Quick Actions</h3>
+            </div>
+            <div class="quick-actions">
+                <button class="action-btn" id="generateReportBtn">
+                    <i class="fas fa-file-alt"></i><span>Generate Report</span>
+                </button>
+                <button class="action-btn" id="scheduleMeetingBtn">
+                    <i class="fas fa-calendar-plus"></i><span>Schedule Meeting</span>
+                </button>
+                <button class="action-btn" id="assignResourceBtn">
+                    <i class="fas fa-user-plus"></i><span>Assign Resource</span>
+                </button>
+                <button class="action-btn" id="reviewStatusBtn">
+                    <i class="fas fa-clipboard-check"></i><span>Review Status</span>
+                </button>
+            </div>
+
+            <div class="panel-section">
+                <h3>Pending Actions</h3>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon" style="background:rgba(239,68,68,0.1);color:var(--status-dropped)">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        <div class="activity-content">
+                            <p><strong>Reminder:</strong> Project to be Initiated (15 days)</p>
+                            <span class="activity-time">Due Soon</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon"
+                            style="background:rgba(245,158,11,0.1);color:var(--status-to-be-initiated)">
+                            <i class="fas fa-flag"></i>
+                        </div>
+                        <div class="activity-content">
+                            <p><strong>Notify:</strong> Upcoming Milestone (10 days)</p>
+                            <span class="activity-time">Automated</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon" style="background:rgba(239,68,68,0.1);color:var(--status-dropped)">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <div class="activity-content">
+                            <p><strong>Alert:</strong> 90% Budget Utilized</p>
+                            <span class="activity-time">Critical</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon" style="background:rgba(99,102,241,0.1);color:var(--primary-main)">
+                            <i class="fas fa-pencil-alt"></i>
+                        </div>
+                        <div class="activity-content">
+                            <p><strong>Update:</strong> Monthly Core Project Status</p>
+                            <span class="activity-time">By 25th</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel-section">
+                <h3>Recent Activity</h3>
+                <div class="activity-list" id="activityList">
+                    <!-- Dynamically filled -->
+                </div>
+            </div>
+
+            <div class="support-btn"><i class="fas fa-headset"></i><span>Support</span></div>
+        </aside>
+    </div>
+
+    <!-- ====== MODALS ====== -->
+
+    <!-- Drill-Down Modal -->
+    <div id="drillDownModal" class="modal-overlay" style="display:none">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3 id="drillDownTitle">Projects</h3>
+                <button class="modal-close" onclick="closeModal('drillDownModal')">×</button>
+            </div>
+            <div class="modal-body">
+                <table class="resource-table" id="drillDownTable">
+                    <thead id="drillDownHead"></thead>
+                    <tbody id="drillDownBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add KPI Modal -->
+    <div id="addKpiModal" class="modal-overlay" style="display:none">
+        <div class="modal-container" style="max-width:480px">
+            <div class="modal-header">
+                <h3>Add New KPI</h3>
+                <button class="modal-close" onclick="closeModal('addKpiModal')">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>KPI Name</label>
+                    <input type="text" id="kpiName" class="form-input" placeholder="e.g. On-Time Delivery">
+                </div>
+                <div class="form-group">
+                    <label>Current Value</label>
+                    <input type="text" id="kpiCurrentValue" class="form-input" placeholder="e.g. 75%">
+                </div>
+                <div class="form-group">
+                    <label>Target</label>
+                    <input type="text" id="kpiTarget" class="form-input" placeholder="e.g. 90%">
+                </div>
+                <div class="form-group">
+                    <label>Status</label>
+                    <select id="kpiStatus" class="filter-select" style="width:100%">
+                        <option value="on-track">On Track</option>
+                        <option value="at-risk">At Risk</option>
+                        <option value="critical">Critical</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" style="width:100%;margin-top:12px" onclick="submitNewKpi()">
+                    <i class="fas fa-plus"></i> Add KPI
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Project Modal -->
+    <div id="newProjectModal" class="modal-overlay" style="display:none">
+        <div class="modal-container npm-modal">
+            <!-- Modal Header -->
+            <div class="npm-header">
+                <div class="npm-header-left">
+                    <div class="npm-header-icon"><i class="fas fa-plus"></i></div>
+                    <div>
+                        <h3 class="npm-title">Add New Project</h3>
+                        <p class="npm-subtitle">Fill in the details to register a new project in the portfolio</p>
+                    </div>
+                </div>
+                <button class="npm-close" onclick="closeModal('newProjectModal')"><i class="fas fa-times"></i></button>
+            </div>
+
+            <div class="npm-body">
+                <!-- Row 1: Name + Project ID -->
+                <div class="npm-row">
+                    <div class="npm-field npm-field-wide">
+                        <label class="npm-label"><i class="fas fa-folder-open"></i> Project Name <span
+                                class="npm-required">*</span></label>
+                        <input type="text" id="newProjName" class="npm-input" placeholder="e.g. AI Camera Enhancement">
+                    </div>
+                    <div class="npm-field">
+                        <label class="npm-label"><i class="fas fa-tag"></i> Project ID</label>
+                        <input type="text" id="newProjId" class="npm-input" placeholder="Auto-generated">
+                    </div>
+                </div>
+
+                <!-- Row 2: Status + Risk -->
+                <div class="npm-row">
+                    <div class="npm-field">
+                        <label class="npm-label"><i class="fas fa-info-circle"></i> Status <span
+                                class="npm-required">*</span></label>
+                        <div class="npm-status-pills" id="npmStatusPills">
+                            <button class="npm-pill" data-val="planned" onclick="selectNpmStatus(this)"><i
+                                    class="fas fa-clock"></i> Planned</button>
+                            <button class="npm-pill active" data-val="initiated" onclick="selectNpmStatus(this)"><i
+                                    class="fas fa-play-circle"></i> Initiated</button>
+                            <button class="npm-pill" data-val="to-be-initiated" onclick="selectNpmStatus(this)"><i
+                                    class="fas fa-hourglass-start"></i> To Be Initiated</button>
+                        </div>
+                        <input type="hidden" id="newProjStatus" value="initiated">
+                    </div>
+                    <div class="npm-field">
+                        <label class="npm-label"><i class="fas fa-shield-alt"></i> Risk Level</label>
+                        <div class="npm-risk-pills" id="npmRiskPills">
+                            <button class="npm-risk-pill active" data-val="low" onclick="selectNpmRisk(this)"><span
+                                    class="npm-risk-dot low"></span> Low</button>
+                            <button class="npm-risk-pill" data-val="medium" onclick="selectNpmRisk(this)"><span
+                                    class="npm-risk-dot medium"></span> Medium</button>
+                            <button class="npm-risk-pill" data-val="high" onclick="selectNpmRisk(this)"><span
+                                    class="npm-risk-dot high"></span> High</button>
+                        </div>
+                        <input type="hidden" id="newProjRisk" value="low">
+                    </div>
+                </div>
+
+                <!-- Row 3: Budget + Team -->
+                <div class="npm-row">
+                    <div class="npm-field">
+                        <label class="npm-label"><i class="fas fa-dollar-sign"></i> Budget (USD)</label>
+                        <div class="npm-input-prefix-wrap">
+                            <span class="npm-prefix">$</span>
+                            <input type="number" id="newProjBudget" class="npm-input npm-input-prefixed"
+                                placeholder="0">
+                        </div>
+                    </div>
+                    <div class="npm-field">
+                        <label class="npm-label"><i class="fas fa-users"></i> Assigned Team</label>
+                        <select id="newProjTeam" class="npm-select">
+                            <option value="">Select team...</option>
+                            <option value="team-alpha">Alpha Division</option>
+                            <option value="team-beta">Beta Division</option>
+                            <option value="team-gamma">Gamma Division</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Row 4: Description -->
+                <div class="npm-field npm-field-full">
+                    <label class="npm-label"><i class="fas fa-align-left"></i> Description</label>
+                    <textarea id="newProjDesc" class="npm-textarea" rows="3"
+                        placeholder="Brief description of the project scope and objectives..."></textarea>
+                </div>
+
+                <!-- Row 5: Start Date + End Date -->
+                <div class="npm-row">
+                    <div class="npm-field">
+                        <label class="npm-label"><i class="fas fa-calendar-alt"></i> Start Date</label>
+                        <input type="date" id="newProjStart" class="npm-input">
+                    </div>
+                    <div class="npm-field">
+                        <label class="npm-label"><i class="fas fa-calendar-check"></i> Target End Date</label>
+                        <input type="date" id="newProjEnd" class="npm-input">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="npm-footer">
+                <button class="npm-btn-cancel" onclick="closeModal('newProjectModal')">
+                    <i class="fas fa-times"></i> Cancel
+                </button>
+                <button class="npm-btn-save" onclick="submitNewProject()">
+                    <i class="fas fa-check"></i> Create Project
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

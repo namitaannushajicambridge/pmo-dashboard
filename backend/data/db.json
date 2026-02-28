@@ -1,0 +1,1409 @@
+{
+  "filterHierarchy": {
+    "projects": [
+      {
+        "id": "proj-ai-camera",
+        "name": "AI Camera Optimization",
+        "subProjects": [
+          {
+            "id": "sub-image-enhancement",
+            "name": "Image Enhancement Module",
+            "features": [
+              {
+                "id": "feat-hdr",
+                "name": "HDR Processing"
+              },
+              {
+                "id": "feat-superres",
+                "name": "Super Resolution"
+              },
+              {
+                "id": "feat-color",
+                "name": "Color Correction Engine"
+              }
+            ]
+          },
+          {
+            "id": "sub-low-light",
+            "name": "Low Light Optimization",
+            "features": [
+              {
+                "id": "feat-night-mode",
+                "name": "Night Mode Enhancer"
+              },
+              {
+                "id": "feat-noise-reduce",
+                "name": "Noise Reduction"
+              },
+              {
+                "id": "feat-iso-boost",
+                "name": "ISO Boost Algorithm"
+              }
+            ]
+          },
+          {
+            "id": "sub-scene-detect",
+            "name": "AI Scene Detection",
+            "features": [
+              {
+                "id": "feat-scene-class",
+                "name": "Scene Classifier"
+              },
+              {
+                "id": "feat-object-det",
+                "name": "Object Detection"
+              },
+              {
+                "id": "feat-auto-frame",
+                "name": "Auto Framing"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "proj-voice",
+        "name": "Voice Processing Engine",
+        "subProjects": [
+          {
+            "id": "sub-noise-cancel",
+            "name": "Noise Cancellation",
+            "features": [
+              {
+                "id": "feat-env-noise",
+                "name": "Environmental Noise Filter"
+              },
+              {
+                "id": "feat-wind-noise",
+                "name": "Wind Noise Suppression"
+              },
+              {
+                "id": "feat-echo",
+                "name": "Echo Cancellation"
+              }
+            ]
+          },
+          {
+            "id": "sub-speech-recog",
+            "name": "Speech Recognition",
+            "features": [
+              {
+                "id": "feat-lang-model",
+                "name": "Language Model Integration"
+              },
+              {
+                "id": "feat-accent",
+                "name": "Accent Adaptation"
+              },
+              {
+                "id": "feat-realtime-stt",
+                "name": "Real-Time STT"
+              }
+            ]
+          },
+          {
+            "id": "sub-wake-word",
+            "name": "Wake Word Detection",
+            "features": [
+              {
+                "id": "feat-keyword-spot",
+                "name": "Keyword Spotting"
+              },
+              {
+                "id": "feat-false-pos",
+                "name": "False Positive Reduction"
+              },
+              {
+                "id": "feat-low-power-ww",
+                "name": "Low Power Listener"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "proj-memory",
+        "name": "Memory & Performance Management",
+        "subProjects": [
+          {
+            "id": "sub-ram-opt",
+            "name": "RAM Optimization",
+            "features": [
+              {
+                "id": "feat-cache-clean",
+                "name": "Cache Cleaner"
+              },
+              {
+                "id": "feat-smart-alloc",
+                "name": "Smart Memory Allocation"
+              },
+              {
+                "id": "feat-proc-prio",
+                "name": "Process Prioritization"
+              }
+            ]
+          },
+          {
+            "id": "sub-bg-task",
+            "name": "Background Task Control",
+            "features": [
+              {
+                "id": "feat-bg-limit",
+                "name": "Background App Limiter"
+              },
+              {
+                "id": "feat-task-sched",
+                "name": "Task Scheduler"
+              },
+              {
+                "id": "feat-doze-mode",
+                "name": "Doze Mode Optimization"
+              }
+            ]
+          },
+          {
+            "id": "sub-thermal",
+            "name": "Thermal Performance Tuning",
+            "features": [
+              {
+                "id": "feat-throttle",
+                "name": "CPU Throttle Control"
+              },
+              {
+                "id": "feat-heat-map",
+                "name": "Heat Map Analysis"
+              },
+              {
+                "id": "feat-cool-algo",
+                "name": "Cooling Algorithm"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "proj-ondevice-ai",
+        "name": "On-Device AI Framework",
+        "subProjects": [
+          {
+            "id": "sub-model-compress",
+            "name": "Model Compression",
+            "features": [
+              {
+                "id": "feat-quantize",
+                "name": "Model Quantization"
+              },
+              {
+                "id": "feat-prune",
+                "name": "Weight Pruning"
+              },
+              {
+                "id": "feat-distill",
+                "name": "Knowledge Distillation"
+              }
+            ]
+          },
+          {
+            "id": "sub-edge-deploy",
+            "name": "Edge Model Deployment",
+            "features": [
+              {
+                "id": "feat-ota-model",
+                "name": "OTA Model Updates"
+              },
+              {
+                "id": "feat-version-ctrl",
+                "name": "Model Version Control"
+              },
+              {
+                "id": "feat-rollback",
+                "name": "Rollback Engine"
+              }
+            ]
+          },
+          {
+            "id": "sub-runtime-inf",
+            "name": "Runtime Inference Engine",
+            "features": [
+              {
+                "id": "feat-npu-accel",
+                "name": "NPU Acceleration"
+              },
+              {
+                "id": "feat-batch-inf",
+                "name": "Batch Inference"
+              },
+              {
+                "id": "feat-latency-opt",
+                "name": "Latency Optimizer"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "hierarchy": {
+    "projectManagers": [
+      {
+        "id": "pm-001",
+        "name": "Rajesh Kumar",
+        "teams": [
+          {
+            "id": "team-alpha",
+            "name": "Alpha Division",
+            "subTeams": [
+              {
+                "id": "team-alpha-ai",
+                "name": "AI/ML Engineering",
+                "subTeams": [
+                  {
+                    "id": "team-alpha-ai-nlp",
+                    "name": "NLP Research"
+                  },
+                  {
+                    "id": "team-alpha-ai-cv",
+                    "name": "Computer Vision"
+                  }
+                ]
+              },
+              {
+                "id": "team-alpha-data",
+                "name": "Data Engineering",
+                "subTeams": [
+                  {
+                    "id": "team-alpha-data-pipeline",
+                    "name": "Pipeline Ops"
+                  },
+                  {
+                    "id": "team-alpha-data-viz",
+                    "name": "Data Viz"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "team-beta",
+            "name": "Beta Division",
+            "subTeams": [
+              {
+                "id": "team-beta-cloud",
+                "name": "Cloud Infrastructure",
+                "subTeams": [
+                  {
+                    "id": "team-beta-cloud-aws",
+                    "name": "AWS Ops"
+                  },
+                  {
+                    "id": "team-beta-cloud-azure",
+                    "name": "Azure Ops"
+                  }
+                ]
+              },
+              {
+                "id": "team-beta-security",
+                "name": "Security & Compliance",
+                "subTeams": [
+                  {
+                    "id": "team-beta-sec-pentest",
+                    "name": "Pen Testing"
+                  },
+                  {
+                    "id": "team-beta-sec-audit",
+                    "name": "Security Audit"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pm-002",
+        "name": "Priya Sharma",
+        "teams": [
+          {
+            "id": "team-gamma",
+            "name": "Gamma Division",
+            "subTeams": [
+              {
+                "id": "team-gamma-mobile",
+                "name": "Mobile Development",
+                "subTeams": [
+                  {
+                    "id": "team-gamma-mobile-ios",
+                    "name": "iOS Team"
+                  },
+                  {
+                    "id": "team-gamma-mobile-android",
+                    "name": "Android Team"
+                  }
+                ]
+              },
+              {
+                "id": "team-gamma-web",
+                "name": "Web Frontend",
+                "subTeams": [
+                  {
+                    "id": "team-gamma-web-react",
+                    "name": "React Squad"
+                  },
+                  {
+                    "id": "team-gamma-web-ux",
+                    "name": "UX Design"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "projects": [
+    {
+      "id": "proj-001",
+      "name": "AI Camera Optimization",
+      "status": "initiated",
+      "projectId": "proj-ai-camera",
+      "subProjectId": null,
+      "featureId": null,
+      "teamId": "team-alpha-ai-cv",
+      "budget": 150000,
+      "spent": 89000,
+      "risk": "low",
+      "riskReason": null,
+      "delayReason": null,
+      "pm": "pm-001",
+      "startDate": "2024-01-15",
+      "endDate": "2024-12-31"
+    },
+    {
+      "id": "proj-002",
+      "name": "Image Enhancement Module",
+      "status": "planned",
+      "projectId": "proj-ai-camera",
+      "subProjectId": "sub-image-enhancement",
+      "featureId": null,
+      "teamId": "team-alpha-ai-cv",
+      "budget": 80000,
+      "spent": 12000,
+      "risk": "low",
+      "riskReason": null,
+      "delayReason": null,
+      "pm": "pm-001",
+      "startDate": "2024-03-01",
+      "endDate": "2024-09-30"
+    },
+    {
+      "id": "proj-003",
+      "name": "HDR Processing",
+      "status": "initiated",
+      "projectId": "proj-ai-camera",
+      "subProjectId": "sub-image-enhancement",
+      "featureId": "feat-hdr",
+      "teamId": "team-alpha-ai-cv",
+      "budget": 40000,
+      "spent": 28000,
+      "risk": "low",
+      "riskReason": null,
+      "delayReason": null,
+      "pm": "pm-001",
+      "startDate": "2024-03-15",
+      "endDate": "2024-07-31"
+    },
+    {
+      "id": "proj-004",
+      "name": "Super Resolution Engine",
+      "status": "planned",
+      "projectId": "proj-ai-camera",
+      "subProjectId": "sub-image-enhancement",
+      "featureId": "feat-superres",
+      "teamId": "team-alpha-ai-cv",
+      "budget": 35000,
+      "spent": 5000,
+      "risk": "medium",
+      "riskReason": "Dependency on ML model training pipeline",
+      "delayReason": null,
+      "pm": "pm-001",
+      "startDate": "2024-05-01",
+      "endDate": "2024-10-31"
+    },
+    {
+      "id": "proj-005",
+      "name": "Low Light Optimization",
+      "status": "initiated",
+      "projectId": "proj-ai-camera",
+      "subProjectId": "sub-low-light",
+      "featureId": null,
+      "teamId": "team-alpha-ai-cv",
+      "budget": 55000,
+      "spent": 32000,
+      "risk": "low",
+      "riskReason": null,
+      "delayReason": null,
+      "pm": "pm-001",
+      "startDate": "2024-02-01",
+      "endDate": "2024-08-31"
+    },
+    {
+      "id": "proj-006",
+      "name": "AI Scene Detection",
+      "status": "closed",
+      "projectId": "proj-ai-camera",
+      "subProjectId": "sub-scene-detect",
+      "featureId": null,
+      "teamId": "team-alpha-ai-cv",
+      "budget": 60000,
+      "spent": 58000,
+      "risk": "low",
+      "riskReason": null,
+      "delayReason": null,
+      "pm": "pm-001",
+      "startDate": "2023-09-01",
+      "endDate": "2024-02-28"
+    },
+    {
+      "id": "proj-007",
+      "name": "Voice Processing Engine",
+      "status": "initiated",
+      "projectId": "proj-voice",
+      "subProjectId": null,
+      "featureId": null,
+      "teamId": "team-alpha-ai-nlp",
+      "budget": 200000,
+      "spent": 115000,
+      "risk": "medium",
+      "riskReason": "Latency targets not met in current build",
+      "delayReason": null,
+      "pm": "pm-001",
+      "startDate": "2024-01-01",
+      "endDate": "2024-12-31"
+    },
+    {
+      "id": "proj-008",
+      "name": "Noise Cancellation Module",
+      "status": "initiated",
+      "projectId": "proj-voice",
+      "subProjectId": "sub-noise-cancel",
+      "featureId": null,
+      "teamId": "team-alpha-ai-nlp",
+      "budget": 70000,
+      "spent": 45000,
+      "risk": "low",
+      "riskReason": null,
+      "delayReason": null,
+      "pm": "pm-001",
+      "startDate": "2024-01-15",
+      "endDate": "2024-07-15"
+    },
+    {
+      "id": "proj-009",
+      "name": "Environmental Noise Filter",
+      "status": "closed",
+      "projectId": "proj-voice",
+      "subProjectId": "sub-noise-cancel",
+      "featureId": "feat-env-noise",
+      "teamId": "team-alpha-ai-nlp",
+      "budget": 25000,
+      "spent": 24000,
+      "risk": "low",
+      "riskReason": null,
+      "delayReason": null,
+      "pm": "pm-001",
+      "startDate": "2024-01-15",
+      "endDate": "2024-04-30"
+    },
+    {
+      "id": "proj-010",
+      "name": "Echo Cancellation",
+      "status": "planned",
+      "projectId": "proj-voice",
+      "subProjectId": "sub-noise-cancel",
+      "featureId": "feat-echo",
+      "teamId": "team-alpha-ai-nlp",
+      "budget": 22000,
+      "spent": 3000,
+      "risk": "low",
+      "riskReason": null,
+      "delayReason": null,
+      "pm": "pm-001",
+      "startDate": "2024-05-01",
+      "endDate": "2024-08-31"
+    },
+    {
+      "id": "proj-011",
+      "name": "Speech Recognition",
+      "status": "initiated",
+      "projectId": "proj-voice",
+      "subProjectId": "sub-speech-recog",
+      "featureId": null,
+      "teamId": "team-alpha-ai-nlp",
+      "budget": 90000,
+      "spent": 55000,
+      "risk": "high",
+      "riskReason": "Accuracy below 92% threshold in noisy environments",
+      "delayReason": "Model retraining needed",
+      "pm": "pm-001",
+      "startDate": "2024-02-01",
+      "endDate": "2024-11-30"
+    },
+    {
+      "id": "proj-012",
+      "name": "Wake Word Detection",
+      "status": "planned",
+      "projectId": "proj-voice",
+      "subProjectId": "sub-wake-word",
+      "featureId": null,
+      "teamId": "team-alpha-ai-nlp",
+      "budget": 45000,
+      "spent": 8000,
+      "risk": "low",
+      "riskReason": null,
+      "delayReason": null,
+      "pm": "pm-001",
+      "startDate": "2024-06-01",
+      "endDate": "2024-12-31"
+    },
+    {
+      "id": "proj-013",
+      "name": "Memory & Performance Management",
+      "status": "initiated",
+      "projectId": "proj-memory",
+      "subProjectId": null,
+      "featureId": null,
+      "teamId": "team-beta-cloud",
+      "budget": 180000,
+      "spent": 102000,
+      "risk": "medium",
+      "riskReason": "Legacy system dependencies identified",
+      "delayReason": null,
+      "pm": "pm-001",
+      "startDate": "2024-01-01",
+      "endDate": "2025-03-31"
+    },
+    {
+      "id": "proj-014",
+      "name": "RAM Optimization",
+      "status": "closed",
+      "projectId": "proj-memory",
+      "subProjectId": "sub-ram-opt",
+      "featureId": null,
+      "teamId": "team-beta-cloud",
+      "budget": 50000,
+      "spent": 48000,
+      "risk": "low",
+      "riskReason": null,
+      "delayReason": null,
+      "pm": "pm-001",
+      "startDate": "2023-10-01",
+      "endDate": "2024-03-31"
+    },
+    {
+      "id": "proj-015",
+      "name": "Cache Cleaner",
+      "status": "closed",
+      "projectId": "proj-memory",
+      "subProjectId": "sub-ram-opt",
+      "featureId": "feat-cache-clean",
+      "teamId": "team-beta-cloud",
+      "budget": 18000,
+      "spent": 17500,
+      "risk": "low",
+      "riskReason": null,
+      "delayReason": null,
+      "pm": "pm-001",
+      "startDate": "2023-10-01",
+      "endDate": "2024-01-31"
+    },
+    {
+      "id": "proj-016",
+      "name": "Smart Memory Allocation",
+      "status": "initiated",
+      "projectId": "proj-memory",
+      "subProjectId": "sub-ram-opt",
+      "featureId": "feat-smart-alloc",
+      "teamId": "team-beta-cloud",
+      "budget": 20000,
+      "spent": 12000,
+      "risk": "low",
+      "riskReason": null,
+      "delayReason": null,
+      "pm": "pm-001",
+      "startDate": "2024-02-01",
+      "endDate": "2024-06-30"
+    },
+    {
+      "id": "proj-017",
+      "name": "Background Task Control",
+      "status": "planned",
+      "projectId": "proj-memory",
+      "subProjectId": "sub-bg-task",
+      "featureId": null,
+      "teamId": "team-beta-cloud",
+      "budget": 40000,
+      "spent": 4000,
+      "risk": "low",
+      "riskReason": null,
+      "delayReason": null,
+      "pm": "pm-001",
+      "startDate": "2024-07-01",
+      "endDate": "2024-12-31"
+    },
+    {
+      "id": "proj-018",
+      "name": "Thermal Performance Tuning",
+      "status": "dropped",
+      "projectId": "proj-memory",
+      "subProjectId": "sub-thermal",
+      "featureId": null,
+      "teamId": "team-beta-cloud",
+      "budget": 35000,
+      "spent": 12000,
+      "risk": "low",
+      "riskReason": null,
+      "delayReason": null,
+      "pm": "pm-001",
+      "dropReason": "Deprioritized in Q3 roadmap review",
+      "startDate": "2024-04-01",
+      "endDate": "2024-09-30"
+    },
+    {
+      "id": "proj-019",
+      "name": "On-Device AI Framework",
+      "status": "initiated",
+      "projectId": "proj-ondevice-ai",
+      "subProjectId": null,
+      "featureId": null,
+      "teamId": "team-alpha-ai",
+      "budget": 250000,
+      "spent": 130000,
+      "risk": "medium",
+      "riskReason": "NPU driver compatibility issues on certain chipsets",
+      "delayReason": null,
+      "pm": "pm-002",
+      "startDate": "2024-01-01",
+      "endDate": "2025-06-30"
+    },
+    {
+      "id": "proj-020",
+      "name": "Model Compression",
+      "status": "initiated",
+      "projectId": "proj-ondevice-ai",
+      "subProjectId": "sub-model-compress",
+      "featureId": null,
+      "teamId": "team-alpha-ai",
+      "budget": 65000,
+      "spent": 40000,
+      "risk": "low",
+      "riskReason": null,
+      "delayReason": null,
+      "pm": "pm-002",
+      "startDate": "2024-02-01",
+      "endDate": "2024-08-31"
+    },
+    {
+      "id": "proj-021",
+      "name": "Model Quantization",
+      "status": "closed",
+      "projectId": "proj-ondevice-ai",
+      "subProjectId": "sub-model-compress",
+      "featureId": "feat-quantize",
+      "teamId": "team-alpha-ai",
+      "budget": 28000,
+      "spent": 27000,
+      "risk": "low",
+      "riskReason": null,
+      "delayReason": null,
+      "pm": "pm-002",
+      "startDate": "2024-02-01",
+      "endDate": "2024-05-31"
+    },
+    {
+      "id": "proj-022",
+      "name": "Weight Pruning",
+      "status": "planned",
+      "projectId": "proj-ondevice-ai",
+      "subProjectId": "sub-model-compress",
+      "featureId": "feat-prune",
+      "teamId": "team-alpha-ai",
+      "budget": 22000,
+      "spent": 2000,
+      "risk": "low",
+      "riskReason": null,
+      "delayReason": null,
+      "pm": "pm-002",
+      "startDate": "2024-06-01",
+      "endDate": "2024-09-30"
+    },
+    {
+      "id": "proj-023",
+      "name": "Edge Model Deployment",
+      "status": "to-be-initiated",
+      "projectId": "proj-ondevice-ai",
+      "subProjectId": "sub-edge-deploy",
+      "featureId": null,
+      "teamId": "team-alpha-ai",
+      "budget": 80000,
+      "spent": 0,
+      "risk": "low",
+      "riskReason": null,
+      "delayReason": null,
+      "pm": "pm-002",
+      "startDate": "2024-09-01",
+      "endDate": "2025-03-31"
+    },
+    {
+      "id": "proj-024",
+      "name": "Runtime Inference Engine",
+      "status": "initiated",
+      "projectId": "proj-ondevice-ai",
+      "subProjectId": "sub-runtime-inf",
+      "featureId": null,
+      "teamId": "team-alpha-ai",
+      "budget": 95000,
+      "spent": 60000,
+      "risk": "high",
+      "riskReason": "Latency exceeds 50ms target on low-end devices",
+      "delayReason": "Hardware profiling taking longer than estimated",
+      "pm": "pm-002",
+      "startDate": "2024-03-01",
+      "endDate": "2024-12-31"
+    }
+  ],
+  "resources": {
+    "monthly": [
+      {
+        "month": "2024-01",
+        "label": "January 2024",
+        "projects": [
+          {
+            "projectName": "AI Camera Optimization",
+            "projectId": "proj-ai-camera",
+            "teamId": "team-alpha-ai-cv",
+            "currentPlan": 25,
+            "previousMonthPlan": 22,
+            "actual": 23,
+            "status": "on-track"
+          },
+          {
+            "projectName": "Voice Processing Engine",
+            "projectId": "proj-voice",
+            "teamId": "team-alpha-ai-nlp",
+            "currentPlan": 18,
+            "previousMonthPlan": 15,
+            "actual": 14,
+            "status": "at-risk"
+          },
+          {
+            "projectName": "Memory & Performance Management",
+            "projectId": "proj-memory",
+            "teamId": "team-beta-cloud",
+            "currentPlan": 30,
+            "previousMonthPlan": 28,
+            "actual": 32,
+            "status": "critical"
+          },
+          {
+            "projectName": "On-Device AI Framework",
+            "projectId": "proj-ondevice-ai",
+            "teamId": "team-alpha-ai",
+            "currentPlan": 20,
+            "previousMonthPlan": 18,
+            "actual": 17,
+            "status": "on-track"
+          },
+          {
+            "projectName": "Noise Cancellation Module",
+            "projectId": "proj-voice",
+            "teamId": "team-alpha-ai-nlp",
+            "currentPlan": 12,
+            "previousMonthPlan": 10,
+            "actual": 11,
+            "status": "on-track"
+          }
+        ]
+      },
+      {
+        "month": "2024-02",
+        "label": "February 2024",
+        "projects": [
+          {
+            "projectName": "AI Camera Optimization",
+            "projectId": "proj-ai-camera",
+            "teamId": "team-alpha-ai-cv",
+            "currentPlan": 26,
+            "previousMonthPlan": 25,
+            "actual": 25,
+            "status": "on-track"
+          },
+          {
+            "projectName": "Speech Recognition",
+            "projectId": "proj-voice",
+            "teamId": "team-alpha-ai-nlp",
+            "currentPlan": 20,
+            "previousMonthPlan": 18,
+            "actual": 22,
+            "status": "critical"
+          },
+          {
+            "projectName": "Memory & Performance Management",
+            "projectId": "proj-memory",
+            "teamId": "team-beta-cloud",
+            "currentPlan": 32,
+            "previousMonthPlan": 30,
+            "actual": 30,
+            "status": "on-track"
+          },
+          {
+            "projectName": "Model Compression",
+            "projectId": "proj-ondevice-ai",
+            "teamId": "team-alpha-ai",
+            "currentPlan": 14,
+            "previousMonthPlan": 12,
+            "actual": 14,
+            "status": "on-track"
+          },
+          {
+            "projectName": "RAM Optimization",
+            "projectId": "proj-memory",
+            "teamId": "team-beta-cloud",
+            "currentPlan": 8,
+            "previousMonthPlan": 6,
+            "actual": 7,
+            "status": "on-track"
+          }
+        ]
+      },
+      {
+        "month": "2024-03",
+        "label": "March 2024",
+        "projects": [
+          {
+            "projectName": "HDR Processing",
+            "projectId": "proj-ai-camera",
+            "teamId": "team-alpha-ai-cv",
+            "currentPlan": 10,
+            "previousMonthPlan": 8,
+            "actual": 9,
+            "status": "on-track"
+          },
+          {
+            "projectName": "Speech Recognition",
+            "projectId": "proj-voice",
+            "teamId": "team-alpha-ai-nlp",
+            "currentPlan": 22,
+            "previousMonthPlan": 20,
+            "actual": 25,
+            "status": "critical"
+          },
+          {
+            "projectName": "Runtime Inference Engine",
+            "projectId": "proj-ondevice-ai",
+            "teamId": "team-alpha-ai",
+            "currentPlan": 18,
+            "previousMonthPlan": 15,
+            "actual": 16,
+            "status": "on-track"
+          },
+          {
+            "projectName": "Background Task Control",
+            "projectId": "proj-memory",
+            "teamId": "team-beta-cloud",
+            "currentPlan": 6,
+            "previousMonthPlan": 0,
+            "actual": 5,
+            "status": "on-track"
+          },
+          {
+            "projectName": "Wake Word Detection",
+            "projectId": "proj-voice",
+            "teamId": "team-alpha-ai-nlp",
+            "currentPlan": 8,
+            "previousMonthPlan": 5,
+            "actual": 7,
+            "status": "on-track"
+          }
+        ]
+      },
+      {
+        "month": "2023-12",
+        "label": "December 2023",
+        "projects": [
+          {
+            "projectName": "AI Scene Detection",
+            "projectId": "proj-ai-camera",
+            "teamId": "team-alpha-ai-cv",
+            "currentPlan": 15,
+            "previousMonthPlan": 14,
+            "actual": 15,
+            "status": "on-track"
+          },
+          {
+            "projectName": "Environmental Noise Filter",
+            "projectId": "proj-voice",
+            "teamId": "team-alpha-ai-nlp",
+            "currentPlan": 10,
+            "previousMonthPlan": 10,
+            "actual": 10,
+            "status": "on-track"
+          },
+          {
+            "projectName": "Cache Cleaner",
+            "projectId": "proj-memory",
+            "teamId": "team-beta-cloud",
+            "currentPlan": 8,
+            "previousMonthPlan": 8,
+            "actual": 8,
+            "status": "on-track"
+          },
+          {
+            "projectName": "Model Quantization",
+            "projectId": "proj-ondevice-ai",
+            "teamId": "team-alpha-ai",
+            "currentPlan": 12,
+            "previousMonthPlan": 10,
+            "actual": 11,
+            "status": "on-track"
+          },
+          {
+            "projectName": "Low Light Optimization",
+            "projectId": "proj-ai-camera",
+            "teamId": "team-alpha-ai-cv",
+            "currentPlan": 14,
+            "previousMonthPlan": 12,
+            "actual": 13,
+            "status": "on-track"
+          }
+        ]
+      },
+      {
+        "month": "2024-04",
+        "label": "April 2024",
+        "projects": [
+          {
+            "projectName": "Super Resolution Engine",
+            "projectId": "proj-ai-camera",
+            "teamId": "team-alpha-ai-cv",
+            "currentPlan": 12,
+            "previousMonthPlan": 10,
+            "actual": 10,
+            "status": "at-risk"
+          },
+          {
+            "projectName": "Speech Recognition",
+            "projectId": "proj-voice",
+            "teamId": "team-alpha-ai-nlp",
+            "currentPlan": 24,
+            "previousMonthPlan": 22,
+            "actual": 26,
+            "status": "critical"
+          },
+          {
+            "projectName": "Smart Memory Allocation",
+            "projectId": "proj-memory",
+            "teamId": "team-beta-cloud",
+            "currentPlan": 10,
+            "previousMonthPlan": 8,
+            "actual": 9,
+            "status": "on-track"
+          },
+          {
+            "projectName": "Runtime Inference Engine",
+            "projectId": "proj-ondevice-ai",
+            "teamId": "team-alpha-ai",
+            "currentPlan": 20,
+            "previousMonthPlan": 18,
+            "actual": 20,
+            "status": "on-track"
+          },
+          {
+            "projectName": "Edge Model Deployment",
+            "projectId": "proj-ondevice-ai",
+            "teamId": "team-alpha-ai",
+            "currentPlan": 5,
+            "previousMonthPlan": 0,
+            "actual": 4,
+            "status": "on-track"
+          }
+        ]
+      }
+    ]
+  },
+  "kpis": [
+    {
+      "id": "kpi-002",
+      "name": "Local RnD Completion",
+      "icon": "fa-flask",
+      "currentValue": "65%",
+      "target": "70%",
+      "trend": "+8%",
+      "trendDir": "up",
+      "status": "at-risk"
+    },
+    {
+      "id": "kpi-003",
+      "name": "RnD Note Updated",
+      "icon": "fa-file-alt",
+      "currentValue": "42 notes",
+      "target": "50 notes",
+      "trend": "No change",
+      "trendDir": "neutral",
+      "status": "on-track"
+    },
+    {
+      "id": "kpi-004",
+      "name": "Customer Satisfaction",
+      "icon": "fa-smile",
+      "currentValue": "4.2/5",
+      "target": "4.5/5",
+      "trend": "+0.1",
+      "trendDir": "up",
+      "status": "at-risk"
+    },
+    {
+      "id": "kpi-005",
+      "name": "Sprint Velocity",
+      "icon": "fa-tachometer-alt",
+      "currentValue": "82 pts",
+      "target": "90 pts",
+      "trend": "+3 pts",
+      "trendDir": "up",
+      "status": "on-track"
+    }
+  ],
+  "skillMatrix": [
+    {
+      "id": "skill-001",
+      "name": "Machine Learning",
+      "expert": 8,
+      "innovator": 4,
+      "advanced": 22,
+      "intermediate": 45,
+      "beginner": 30
+    },
+    {
+      "id": "skill-002",
+      "name": "Cloud Architecture",
+      "expert": 6,
+      "innovator": 3,
+      "advanced": 18,
+      "intermediate": 40,
+      "beginner": 28
+    },
+    {
+      "id": "skill-003",
+      "name": "DevOps / CI-CD",
+      "expert": 5,
+      "innovator": 2,
+      "advanced": 20,
+      "intermediate": 50,
+      "beginner": 35
+    },
+    {
+      "id": "skill-004",
+      "name": "Python Programming",
+      "expert": 15,
+      "innovator": 6,
+      "advanced": 35,
+      "intermediate": 60,
+      "beginner": 20
+    },
+    {
+      "id": "skill-005",
+      "name": "Data Engineering",
+      "expert": 7,
+      "innovator": 3,
+      "advanced": 25,
+      "intermediate": 48,
+      "beginner": 32
+    },
+    {
+      "id": "skill-006",
+      "name": "React / Frontend",
+      "expert": 10,
+      "innovator": 5,
+      "advanced": 28,
+      "intermediate": 42,
+      "beginner": 25
+    },
+    {
+      "id": "skill-007",
+      "name": "Cybersecurity",
+      "expert": 4,
+      "innovator": 2,
+      "advanced": 12,
+      "intermediate": 30,
+      "beginner": 20
+    },
+    {
+      "id": "skill-008",
+      "name": "NLP / Text Analytics",
+      "expert": 3,
+      "innovator": 4,
+      "advanced": 10,
+      "intermediate": 22,
+      "beginner": 18
+    },
+    {
+      "id": "skill-009",
+      "name": "Computer Vision",
+      "expert": 3,
+      "innovator": 3,
+      "advanced": 8,
+      "intermediate": 20,
+      "beginner": 15
+    },
+    {
+      "id": "skill-010",
+      "name": "Agile / Scrum",
+      "expert": 20,
+      "innovator": 8,
+      "advanced": 45,
+      "intermediate": 70,
+      "beginner": 40
+    },
+    {
+      "id": "skill-011",
+      "name": "SQL / Databases",
+      "expert": 12,
+      "innovator": 4,
+      "advanced": 30,
+      "intermediate": 55,
+      "beginner": 28
+    },
+    {
+      "id": "skill-012",
+      "name": "Mobile iOS Dev",
+      "expert": 6,
+      "innovator": 3,
+      "advanced": 14,
+      "intermediate": 25,
+      "beginner": 18
+    },
+    {
+      "id": "skill-013",
+      "name": "Mobile Android Dev",
+      "expert": 5,
+      "innovator": 2,
+      "advanced": 12,
+      "intermediate": 22,
+      "beginner": 15
+    },
+    {
+      "id": "skill-014",
+      "name": "System Design",
+      "expert": 9,
+      "innovator": 5,
+      "advanced": 20,
+      "intermediate": 38,
+      "beginner": 22
+    },
+    {
+      "id": "skill-015",
+      "name": "UX / UI Design",
+      "expert": 7,
+      "innovator": 6,
+      "advanced": 15,
+      "intermediate": 28,
+      "beginner": 20
+    },
+    {
+      "id": "skill-016",
+      "name": "Project Management",
+      "expert": 18,
+      "innovator": 7,
+      "advanced": 40,
+      "intermediate": 65,
+      "beginner": 30
+    },
+    {
+      "id": "skill-017",
+      "name": "Data Science",
+      "expert": 6,
+      "innovator": 4,
+      "advanced": 18,
+      "intermediate": 35,
+      "beginner": 25
+    },
+    {
+      "id": "skill-018",
+      "name": "Kubernetes / Docker",
+      "expert": 5,
+      "innovator": 3,
+      "advanced": 15,
+      "intermediate": 32,
+      "beginner": 28
+    },
+    {
+      "id": "skill-019",
+      "name": "Microservices",
+      "expert": 7,
+      "innovator": 78,
+      "advanced": 20,
+      "intermediate": 38,
+      "beginner": 22
+    },
+    {
+      "id": "skill-020",
+      "name": "Business Analysis",
+      "expert": 11,
+      "innovator": 5,
+      "advanced": 28,
+      "intermediate": 50,
+      "beginner": 30
+    }
+  ],
+  "travelCost": {
+    "totalBudget": 120000,
+    "teams": [
+      {
+        "teamId": "proj-ai-camera",
+        "teamName": "AI Camera Optimization",
+        "allocated": 35000,
+        "used": 22000
+      },
+      {
+        "teamId": "proj-voice",
+        "teamName": "Voice Processing Engine",
+        "allocated": 28000,
+        "used": 18500
+      },
+      {
+        "teamId": "proj-memory",
+        "teamName": "Memory & Performance",
+        "allocated": 32000,
+        "used": 14000
+      },
+      {
+        "teamId": "proj-ondevice-ai",
+        "teamName": "On-Device AI Framework",
+        "allocated": 25000,
+        "used": 19800
+      }
+    ]
+  },
+  "hqPlScores": {
+    "global": {
+      "sribScore": 0.82,
+      "teamScore": 0.79,
+      "trend": [
+        0.7,
+        0.72,
+        0.75,
+        0.77,
+        0.79,
+        0.82
+      ]
+    },
+    "teams": {
+      "proj-ai-camera": {
+        "sribScore": 0.85,
+        "teamScore": 0.83,
+        "trend": [
+          0.72,
+          0.75,
+          0.78,
+          0.8,
+          0.82,
+          0.85
+        ]
+      },
+      "proj-voice": {
+        "sribScore": 0.76,
+        "teamScore": 0.74,
+        "trend": [
+          0.65,
+          0.68,
+          0.7,
+          0.72,
+          0.73,
+          0.76
+        ]
+      },
+      "proj-memory": {
+        "sribScore": 0.81,
+        "teamScore": 0.79,
+        "trend": [
+          0.7,
+          0.73,
+          0.75,
+          0.77,
+          0.78,
+          0.81
+        ]
+      },
+      "proj-ondevice-ai": {
+        "sribScore": 0.88,
+        "teamScore": 0.85,
+        "trend": [
+          0.75,
+          0.78,
+          0.81,
+          0.83,
+          0.84,
+          0.88
+        ]
+      }
+    }
+  },
+  "milestones": [
+    {
+      "status": "Planned",
+      "count": 24,
+      "target": 30,
+      "label": "This Quarter"
+    },
+    {
+      "status": "Completed",
+      "count": 18,
+      "target": 24,
+      "label": "On Track"
+    },
+    {
+      "status": "Delayed",
+      "count": 4,
+      "target": 0,
+      "label": "Needs Attention"
+    },
+    {
+      "status": "Upcoming",
+      "count": 12,
+      "target": 15,
+      "label": "Next 30 Days"
+    }
+  ],
+  "activity": [
+    {
+      "id": 1,
+      "icon": "fa-check",
+      "message": "AI Scene Detection marked as Closed",
+      "time": "2 hours ago"
+    },
+    {
+      "id": 2,
+      "icon": "fa-user",
+      "message": "New resource added to Speech Recognition",
+      "time": "4 hours ago"
+    },
+    {
+      "id": 3,
+      "icon": "fa-play",
+      "message": "Runtime Inference Engine initiated",
+      "time": "Yesterday"
+    },
+    {
+      "id": 4,
+      "icon": "fa-exclamation-triangle",
+      "message": "Speech Recognition flagged as High Risk",
+      "time": "2 days ago"
+    },
+    {
+      "id": 5,
+      "icon": "fa-dollar-sign",
+      "message": "Travel budget 90% utilized - Voice Processing",
+      "time": "3 days ago"
+    }
+  ]
+}

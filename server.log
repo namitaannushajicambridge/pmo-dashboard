@@ -1,0 +1,4 @@
+DEBUG: process.env.PORT is: undefined
+DEBUG: Using PORT: 3000
+✅ PRISM PMO API running at http://localhost:3000
+   API Base: http://localhost:3000/api
