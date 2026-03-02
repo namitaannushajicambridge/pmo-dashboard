@@ -131,6 +131,17 @@ app.get('/api/resources', (req, res) => {
   if (projectId) projects = projects.filter(p => p.projectId === projectId);
   if (subProjectId) projects = projects.filter(p => p.subProjectId === subProjectId);
 
+  // Build December "fixed" baseline map (year-end committed headcount target)
+  const decRecord = monthlyData.find(m => m.month === '2023-12');
+  const decPlanMap = {};
+  if (decRecord) {
+    decRecord.projects.forEach(p => { decPlanMap[p.projectName] = p.currentPlan; });
+  }
+  projects = projects.map(p => ({
+    ...p,
+    decPlan: p.decPlan ?? decPlanMap[p.projectName] ?? null
+  }));
+
   res.json({ month: monthRecord.month, label: monthRecord.label, projects });
 });
 
@@ -266,7 +277,9 @@ app.get('/api/risk', (req, res) => {
       budget: p.budget,
       spent: p.spent,
       teamId: p.teamId,
-      teamName: p.teamName || null
+      teamName: p.teamName || null,
+      startDate: p.startDate,
+      endDate: p.endDate
     }))
   });
 });
